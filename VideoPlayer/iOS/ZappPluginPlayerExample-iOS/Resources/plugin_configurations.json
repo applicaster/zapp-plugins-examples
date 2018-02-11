@@ -1,0 +1,21 @@
+[{
+	"plugin": {
+		"api": {
+			"class_name": "ZappPluginPlayerExample_iOS.ZappPlayerAdapter"
+		},
+		"author_name": "Zapp Developer",
+		"author_email": "applicaster@applicaster.com",
+		"manifest_version": "1.0.0",
+		"name": "Neon",
+		"description": "ZappPlayerAdapter",
+		"identifier": "ZappPlayerAdapter-iOS",
+		"type": "player",
+		"platform": "ios",
+		"min_zapp_sdk": "4.3.10-dev",
+		"whitelisted_account_ids": [],
+		"dependency_repository_url": [],
+		"dependency_name": "",
+		"dependency_version": ""
+	},
+	"configuration_json": {}
+}]
