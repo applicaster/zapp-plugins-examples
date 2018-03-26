@@ -1,0 +1,26 @@
+[{
+  "plugin": {
+    "api": {
+      "class_name": "com.applicaster.player.plugins.testplayerplugin_android.TestPlayerAdapter",
+      "require_startup_execution": false
+    },
+    "name": "Test Player",
+    "type": "player",
+    "platform": "android",
+    "identifier": "Test Player",
+    "author_name": "Applicaster Dev",
+    "description": "Test Player",
+    "author_email": "a.dev@applicaster.com",
+    "min_zapp_sdk": "4.9.0",
+    "dependency_name": "com.applicaster:TestPlayerPlugin",
+    "manifest_version": "1.6.4",
+    "dependency_version": "1.6.4",
+    "whitelisted_account_ids": [],
+    "dependency_repository_url": [],
+    "deprecated_since_zapp_sdk": "",
+    "unsupported_since_zapp_sdk": ""
+  },
+  "configuration_json": {
+    "accountID": "Z4d3kxOn0tfJK9oJkcCpNlNGK1aP"
+  }
+}]
