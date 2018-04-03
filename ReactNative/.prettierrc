@@ -13,6 +13,6 @@
   "singleQuote": true,
   "stylelintIntegration": false,
   "tabWidth": 2,
-  "trailingComma": "app",
+  "trailingComma": "all",
   "useTabs": false
 }
