@@ -1,10 +1,25 @@
 {
   "name": "@applicaster/react-native-plugin-boilerplate",
   "version": "0.0.1",
+  "applicasterPluginSettings": {
+    "rnVersion": "0_50_4",
+    "bundleName": "react-native-plugin-boilerplate"
+  },
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "build": "npm run build:ios && npm run build:android",
+    "build:ios": "react-native bundle --platform ios --dev false --entry-file index.ios.js --bundle-output tmp/build/ios/index.ios.bundle --assets-dest src/assets/",
+    "build:android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output tmp/build/android/index.android.bundle --assets-dest src/assets/",
+    "build:staging:ios": "react-native bundle --platform ios --dev true --entry-file index.ios.js --bundle-output tmp/build/ios/index.ios.bundle --assets-dest src/assets/",
+    "build:staging:android": "react-native bundle --platform android --dev true --entry-file index.android.js --bundle-output tmp/build/android/index.android.bundle --assets-dest src/assets/",
+    "deploy": "npm run deploy:ios && npm run deploy:android",
+    "deploy:staging": "npm run deploy:staging:ios && npm run deploy:staging:android",
+    "deploy:ios": "npm run build:ios && aws s3 sync tmp/build/ios s3://assets-production.applicaster.com/zapp/react-native-bundles/$npm_package_applicasterPluginSettings_bundleName/$npm_package_applicasterPluginSettings_rnVersion/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "deploy:android": "npm run build:android && aws s3 sync tmp/build/android s3://assets-production.applicaster.com/zapp/react-native-bundles/$npm_package_applicasterPluginSettings_bundleName/$npm_package_applicasterPluginSettings_rnVersion/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "deploy:staging:ios": "npm run build:ios && aws s3 sync tmp/build/ios s3://assets-development.applicaster.com/zapp/react-native-bundles/$npm_package_applicasterPluginSettings_bundleName/$npm_package_applicasterPluginSettings_rnVersion/ios --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "deploy:staging:android": "npm run build:android && aws s3 sync tmp/build/android s3://assets-development.applicaster.com/zapp/react-native-bundles/$npm_package_applicasterPluginSettings_bundleName/$npm_package_applicasterPluginSettings_rnVersion/android --region us-east-1 --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
   },
   "dependencies": {
     "prop-types": "^15.6.1",
