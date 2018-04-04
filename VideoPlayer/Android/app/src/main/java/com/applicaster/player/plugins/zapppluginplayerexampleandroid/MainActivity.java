@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             inlineButton.setText("Remove Inline");
             inlineAttached = true;
             playerContract.attachInline(videoLayout);
-            playerContract.playInline();
+            playerContract.playInline(null);
         } else {
             inlineButton.setText("Play Inline");
             inlineAttached = false;

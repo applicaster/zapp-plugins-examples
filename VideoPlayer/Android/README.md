@@ -2,6 +2,14 @@
 
 This is an example project for creating a player plugin for the Applicaster Zapp Platform. You can use this example project as a reference to build and test your own player plugin. 
 
+# Prepare App for local building 
+
+#### Set Up Bintray Variables
+Bintray credentials enable the build to pull Applicaster SDK dependencies from Maven.
+
+1. Add `MAVEN_USERNAME` and `MAVEN_PASSWORD` entries to your environment variables.
+2. Contact an Applicaster developer to obtain credentials for the above entries.
+
 # Project Structure 
 
 ### App Module

@@ -1,5 +1,6 @@
 package com.applicaster.player.plugins.testplayerplugin_android;
 
+import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.VideoView;
 
 import com.applicaster.plugin_manager.playersmanager.Playable;
 
+import static com.applicaster.player.plugins.testplayerplugin_android.TestPlayerAdapter.ALLOW_PORTRAIT;
 import static com.applicaster.player.plugins.testplayerplugin_android.TestPlayerAdapter.KEY_PLAYABLE;
 
 public class TestPlayerActivity extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class TestPlayerActivity extends AppCompatActivity {
     private Playable playable;
     private VideoView videoView;
     private MediaController mediaController;
+    private boolean allow_portrait = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +33,15 @@ public class TestPlayerActivity extends AppCompatActivity {
         if (getIntent().getExtras() != null) {
             playable = (Playable) getIntent().getExtras()
                     .getSerializable(KEY_PLAYABLE);
+            allow_portrait = getIntent().getBooleanExtra(ALLOW_PORTRAIT, false);
+        }
+
+        if (allow_portrait) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
         }
 
         setContentView(R.layout.activity_test_player);
         videoView = findViewById(R.id.video_view);
-        hideSystemUI();
     }
 
 
@@ -56,13 +63,17 @@ public class TestPlayerActivity extends AppCompatActivity {
         }
     }
 
-    private void hideSystemUI() {
-        this.getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE);
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            this.getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
     }
 }

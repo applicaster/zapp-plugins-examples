@@ -21,6 +21,6 @@
     "unsupported_since_zapp_sdk": ""
   },
   "configuration_json": {
-    "accountID": "Z4d3kxOn0tfJK9oJkcCpNlNGK1aP"
+    "allow_portrait": true
   }
 }]

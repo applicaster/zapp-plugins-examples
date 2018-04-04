@@ -7,7 +7,7 @@
     <application>
         <activity android:name=".TestPlayerActivity"
             android:screenOrientation="sensorLandscape"
-            android:configChanges="orientation"
+            android:configChanges="orientation|screenSize"
             android:theme="@style/Theme.AppCompat.NoActionBar">
 
         </activity>

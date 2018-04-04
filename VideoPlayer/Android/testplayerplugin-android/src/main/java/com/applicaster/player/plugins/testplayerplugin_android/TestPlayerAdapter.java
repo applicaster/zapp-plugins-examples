@@ -11,6 +11,8 @@ import android.widget.VideoView;
 import com.applicaster.player.defaultplayer.BasePlayer;
 import com.applicaster.plugin_manager.playersmanager.Playable;
 import com.applicaster.plugin_manager.playersmanager.PlayableConfiguration;
+import com.applicaster.util.OSUtil;
+import com.applicaster.util.StringUtil;
 
 import java.util.List;
 import java.util.Map;
@@ -23,8 +25,10 @@ import java.util.Map;
 public class TestPlayerAdapter extends BasePlayer {
 
     static final String KEY_PLAYABLE = "playable";
+    static final String ALLOW_PORTRAIT = "allow_portrait";
     private VideoView videoView;
     private MediaController mediaController;
+    private boolean allowPortrait = false;
 
 
     /**
@@ -53,11 +57,16 @@ public class TestPlayerAdapter extends BasePlayer {
      * initialization of the player plugin configuration with a Map params.
      * the params taken from res/raw/plugin_configurations.json
      *
-     * @param params
+     * @param params configurations
      */
     @Override
     public void setPluginConfigurationParams(Map params) {
         super.setPluginConfigurationParams(params);
+
+        // This is an example of how you can retrieve a configuration
+        if (params.containsKey(ALLOW_PORTRAIT)) {
+            allowPortrait = StringUtil.booleanValue(params.get(ALLOW_PORTRAIT).toString());
+        }
     }
 
     /**
@@ -98,6 +107,7 @@ public class TestPlayerAdapter extends BasePlayer {
         Intent intent = new Intent(context, TestPlayerActivity.class);
         if (getFirstPlayable() != null) {
             intent.putExtra(KEY_PLAYABLE, getFirstPlayable());
+            intent.putExtra(ALLOW_PORTRAIT, allowPortrait);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             context.startActivity(intent);
         }
@@ -129,13 +139,14 @@ public class TestPlayerAdapter extends BasePlayer {
         }
     }
 
-
     /**
-     * Starts playing the inline player.
+     * start the player in inline with configuration.
+     *
+     * @param configuration player configuration.
      */
     @Override
-    public void playInline() {
-        super.playInline();
+    public void playInline(PlayableConfiguration configuration) {
+        super.playInline(configuration);
         if (getFirstPlayable() != null) {
             videoView.setVideoURI(Uri.parse(getFirstPlayable().getContentVideoURL()));
             videoView.start();
