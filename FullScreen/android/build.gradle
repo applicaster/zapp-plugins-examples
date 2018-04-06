@@ -19,7 +19,10 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven {
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.google.com' }
+        mavenCentral()
+        maven { // Applicaster
             credentials {
                 username System.getenv("MAVEN_USERNAME")
                 password System.getenv("MAVEN_PASSWORD")

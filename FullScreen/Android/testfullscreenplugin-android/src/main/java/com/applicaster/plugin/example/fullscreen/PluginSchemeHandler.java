@@ -12,6 +12,8 @@ public class PluginSchemeHandler implements PluginSchemeI {
     public boolean handlePluginScheme(Context context, Map<String, String> data) {
         boolean verified = false;
 
+        // This will handle the following URLSchema sampleApp://plugin?type=ui_component&action=open
+        // Remember that you can define any type of custom "action" for your specific case.
         if ("ui_component".equals(data.get("type"))) {
             if ("open".equals(data.get("action"))) {
                 verified = true;
