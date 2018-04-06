@@ -1,0 +1,31 @@
+[
+  {
+    "plugin":{
+      "api":{
+        "require_startup_execution": false,
+        "class_name":"com.applicaster.plugin.example.fullscreen.PluginSchemaHandler"
+      },
+      "dependency_repository_url":[
+
+      ],
+      "platform":"android",
+      "author_name":"Javier Tarazaga",
+      "author_email":"j.tarazaga@applicaster.com",
+      "manifest_version":"0.0.1",
+      "name":"Full Screen Plugin Example",
+      "description":"This is a full screen plugin example",
+      "type":"ui_component",
+      "identifier":"example_full_screen_android",
+      "dependency_name":"ExampleFullScreen",
+      "dependency_version":"0.0.1",
+      "whitelisted_account_ids":[
+      ],
+      "min_zapp_sdk":"",
+      "deprecated_since_zapp_sdk":"",
+      "unsupported_since_zapp_sdk":"",
+      "react_native":false
+    },
+    "configuration_json":{
+    }
+  }
+]

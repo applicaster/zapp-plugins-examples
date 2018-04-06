@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Full Screen Plugin</string>
+    <string name="title_full_screen_activity">My Fullscreen View</string>
+
+    <string name="full_screen_text">This is my fullscreen view</string>
+    <string name="launch_full_screen_button">Launch Full Screen View</string>
+</resources>
