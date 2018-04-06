@@ -1,21 +1,11 @@
 package com.applicaster.plugin.example.fullscreen;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.applicaster.loader.json.APPluginsLoader;
-import com.applicaster.plugin_manager.Plugin;
-import com.applicaster.plugin_manager.PluginManager;
-import com.applicaster.plugin_manager.playersmanager.internal.PlayersManager;
-import com.applicaster.util.UrlSchemeUtil;
-import com.applicaster.util.asynctask.AsyncTaskListener;
-
 import java.util.HashMap;
-
-import retrofit2.http.Url;
 
 public class MainActivity extends AppCompatActivity {
 
