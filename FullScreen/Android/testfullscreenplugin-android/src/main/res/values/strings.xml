@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestFullScreenPlugin-Android</string>
+    <string name="title_full_screen_activity">My Fullscreen View</string>
+    <string name="full_screen_text">This is my fullscreen view, hurrah!</string>
+</resources>
