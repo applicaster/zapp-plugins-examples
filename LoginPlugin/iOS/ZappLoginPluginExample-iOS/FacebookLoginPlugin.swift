@@ -27,8 +27,11 @@ import FacebookLogin
 //MARK: ZPLoginProviderUserDataProtocol
     
     /**
-     
-    */
+     This methood is called in order to verify if we need to start a login flow with respect to the policies dictionary
+     @params policies - dictionary containing policies to be considered when returning the result, if passed as nil - same as isAuthenticated() method.
+     Returns bool value indicating if the user is already verified if not  we start the login proccess
+     in this example we check if the login token exists and if it is valid
+     */
     public func isUserComply(policies:[String: NSObject]) -> Bool {
         return self.isAuthenticated()
     }
