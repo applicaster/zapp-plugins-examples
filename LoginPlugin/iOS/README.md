@@ -104,7 +104,8 @@ import ApplicasterSDK
     public func isPerformingAuthorizationFlow() -> Bool {
         return self.isPerformingAuthorizationFlow()
     }
-    
+```
+
 ### ZPLoginProviderUserDataProtocol
 ``` swift  
      /**
