@@ -15,9 +15,9 @@ import FacebookLogin
 /*
  This is an example for a login plugin imlementation.
  This shows how to use the ZPLoginProviderProtocol and the ZPLoginProviderUserDataProtocol
- in order to create and integrate Any login plugin that is needed
+ in order to create and integrate any login plugin that is needed
  in this example we choose to implemented the facebook login plugin
- This is the main calss of the implementation
+ This is the main class of the implementation
  **/
 @objc class FacebookLoginPlugin: NSObject, ZPLoginProviderProtocol, ZPLoginProviderUserDataProtocol {
     
