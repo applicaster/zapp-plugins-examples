@@ -8,7 +8,11 @@
 
 import Foundation
 import ZappPlugins
-
+/**
+ This VC manages the login process and coresponds with the login plugin,
+ for example when a user click the login button a login request is sent to the login plugin, and a result is beeing deliverd back
+    FacebookInfoViewController decides if we go to login screen or, if the user is already verified, enter the welcome screen
+ */
 @objc class FacebookInfoViewController: UIViewController {
     
     @IBOutlet weak var fbButton: UIButton!
