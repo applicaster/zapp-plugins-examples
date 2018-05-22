@@ -2,9 +2,9 @@ Pod::Spec.new do |s|
 
   s.name             = "ZappLoginPluginExample-iOS"
   s.version          = '1.0.0'
-  s.summary          = "An EXample of video player framework for Zapp iOS."
+  s.summary          = "An EXample of login plugin framework for Zapp iOS."
   s.description      = <<-DESC
-                        An EXample of video player framework for Zapp iOS.
+                        An EXample of login plugin framework for Zapp iOS.
                        DESC
   s.homepage         = "https://github.com/applicaster/ZappLoginPluginExample-iOS.git"
   s.license          = 'MIT'

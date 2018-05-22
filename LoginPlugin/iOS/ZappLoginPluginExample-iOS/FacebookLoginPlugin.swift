@@ -71,7 +71,8 @@ import FacebookLogin
     **/
     
     /**
-     This method is being called in order to start login process.
+     This method is being called after the isAuthenticated() method returned a false value, meaning, the user is not logged in.
+     It starts the login process.
      The completion should always be called when the process is done - no matter what is the result.
      */
     public func login(_ additionalParameters: [String : Any]?, completion: @escaping ((ZPLoginOperationStatus) -> Void)) {
@@ -115,7 +116,9 @@ import FacebookLogin
     
     /**
      This methood is called in order to verify if we need to start a login flow
-     Returns bool value indicating if the user is already verified if not  we start the login proccess
+     for example play method is invoked on a player, the player first checks if a login plugin exist
+     and if so it creates an instance of this plugin, and invokes this method to check if the user is already logged in
+     Returns bool value indicating if the user is already verified if not we start the login proccess
     */
     public func isAuthenticated() -> Bool {
         return self.isTokenValid()
