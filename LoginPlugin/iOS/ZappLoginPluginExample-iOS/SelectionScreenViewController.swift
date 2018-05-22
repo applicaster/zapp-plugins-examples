@@ -11,7 +11,8 @@ import UIKit
 import ApplicasterSDK
 
 /*
- This Vc constist from a list of login plugins ,it starts the app folw form fist phase of selecting and initializing the selected, same way zappApp invokeds the login plugin 
+ This Vc constist from a list of login plugins ,it starts the app folw form fist phase of selecting and initializing the selected,
+ same way zappApp invokeds the login plugin 
  **/
 @objc class SelectionScreenViewController: UIViewController {
     
