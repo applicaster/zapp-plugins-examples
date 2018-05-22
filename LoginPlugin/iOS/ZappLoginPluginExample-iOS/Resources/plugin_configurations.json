@@ -1,0 +1,31 @@
+[{
+        "plugin": {
+            "api": {
+                "require_startup_execution": true,
+                "class_name": "ZappLoginPluginExample_iOS.FacebookLoginPlugin",
+                "url_schemes": [
+                    "ak{facebook_app_id}"
+                ]
+            },
+            "author_name": "Zapp Developer",
+			"author_email": "applicaster@applicaster.com",
+            "manifest_version": "1.0.0",
+            "name": "Facebook Login",
+            "description": "New facebook plugin to be used when you need to be authenticated with facebook to watch a video. If you are not authenticated it will pop up an informative screen about why you need to login with FB, with a button that will open FB so the user can login. Once logged, it will launch the player in full screen.",
+            "identifier": "FacebookLoginPlugin",
+            "type": "login",
+            "platform": "ios",
+            "min_zapp_sdk": "5.0.0",
+            "deprecated_since_zapp_sdk": "",
+            "unsupported_since_zapp_sdk": "",
+            "react_native": false,
+            "dependency_repository_url": [],
+            "whitelisted_account_ids": [],
+            "dependency_name": "ZappLoginPlugins/FacebookLoginPlugin",
+            "dependency_version": "2.7.0",
+            "extra_dependencies": []
+        },
+        "configuration_json": {
+            "facebook_permissions": "public_profile,email"
+        }
+    }]
