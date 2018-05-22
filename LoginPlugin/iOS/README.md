@@ -1,161 +1,139 @@
-# ZappPluginPlayerExample-iOS
+# ZappLoginPluginExample-iOS
 
-The ZappPluginPlayerExample-iOS is an example project for creating a player plugin for the Applicaster Zapp Platform. You can use this example project as a reference for how to build your own video player plugin.
+The ZappLoginPluginExample is an example project for creating a login plugin for the Applicaster Zapp Platform. You can use this example project as a reference for how to build your own login plugin.
 
 If you are not familiar with Zapp please visit [our website](http://applicaster.com/?page=product) for more details.
 
 The full [Zapp](http://zapp.applicaster.com) plugins documentation is available [here](http://zapp-tech-book.herokuapp.com).
 
 ## Getting Started
-Clone this project `$ git clone https://github.com/applicaster/ZappPluginPlayerExample-iOS.git`.
-
+Clone this project `$ git clone https://github.com/applicaster/zapp-plugins-examples.git`.
+and navigate to LoginPlugin -> iOS
 Run `$ pod install` in order to set the workspace.
 
-Open `ZappPluginPlayerExample-iOS.xcworkspace` with Xcode 8.3.3 or above.
+Open `ZappLoginPluginExample-iOS.xcworkspace` with Xcode 9.3.1 or above.
 
-## Zapp Plugin Player API
-The Zapp plugin player API enables developers to integrate different players to the the Zapp Platform.
+## Zapp Login Plugin API
+The Zapp login plugin API enables developers to integrate different login providers to the the Zapp Platform.
 
-The API contains the `ZPPlayerProtocol` which can be easily implemented by subclassing the `APPlugablePlayerBase`.
-
-In order to access the `ZPPlayerProtocol` and the `APPlugablePlayerBase`, you will need to import `ApplicasterSDK` and the `ZappPlugins` frameworks, for example:
+The API contains the `ZPLoginProviderProtocol` and `ZPLoginProviderUserDataProtocol`
+In order to access the `ZPLoginProviderProtocol` and the `ZPLoginProviderUserDataProtocol`, you will need to import `ApplicasterSDK` and the `ZappPlugins` frameworks, for example:
 ``` swift
 import Foundation
 import ZappPlugins
 import ApplicasterSDK
-import AVKit
 ```
 
-### ZPPlayerProtocol
+### ZPLoginProviderProtocol
 ``` swift
-    /// Initialization of player instance view controller with item to play.
-    ///
-    /// - Parameter item: The instance ZPPlayable item.
-    /// - Returns: Creates an instance of the player view controller and, in this example, returns a ZappPlayerAdapter instance.
-    public static func pluggablePlayerInit(playableItems items: [ZPPlayable]?, configurationJSON: NSDictionary?) -> ZPPlayerProtocol? {
-        // Replace this lines with your player implementation
-        let instance = ZappPlayerAdapter()
-        instance.playerViewController = AVPlayerViewController()
-        instance.currentPlayableItem = items?.first
-        return instance
+    /**
+     Initialization of login Plugin instance
+     @Params: configurationJSON - dictionary containing the Plugin setitngs as defined in the plugin manifest
+     */
+    public required init(configurationJSON: NSDictionary?) {
+        super.init()
+        self.loginManager = LoginManager()
+        self.configurationJSON = configurationJSON
     }
     
-    /// Returns the view controller of current playable player instance.
-    ///
-    /// - Returns: Should return a playable view controller (for the specific instance).
-    public override func pluggablePlayerViewController() -> UIViewController? {
-        // Replace this lines with your player implementation
-        if let videoPath = self.currentPlayableItem?.contentVideoURLPath(),
-            let videoURL = URL(string: videoPath) {
-            
-            let player = AVPlayer(url: videoURL)
-            self.playerViewController?.player = player
-        }
-        return self.playerViewController
-    }
-    
-    /// Returns the playing asset.
-    ///
-    /// - Returns: Should return the playable stream url as NSURL.
-    public func pluggablePlayerCurrentUrl() -> NSURL? {
-        if let videoPath = currentPlayableItem?.contentVideoURLPath() {
-            return NSURL(string: videoPath)
-        }
-        return nil
-    }
-    
-    /// Returns the current playable item
-    ///
-    /// - Returns: Should return the current playable item of ZPPlayable type.
-    public func pluggablePlayerCurrentPlayableItem() -> ZPPlayable? {
-        return currentPlayableItem
-    }
-    
-        /// Start playing with configuration
-    ///
-    /// - Parameter configuration: ZPPlayerConfiguration object, including few configurations for the player instance. For example, should the player start muted until tapped for the first time.
-    public override func pluggablePlayerPlay(_ configuration: ZPPlayerConfiguration?) {
-        // Replace this lines with your player implementation
-        if self.currentPlayableItem?.isLive() == true {
-            self.playVideo()
-        }
-        else {
-            self.playVideo()
+    /**
+     This method is being called in order to start login process.
+     The completion should always be called when the process is done - no matter what is the result.
+     */
+    public func login(_ additionalParameters: [String : Any]?, completion: @escaping ((ZPLoginOperationStatus) -> Void)) {
+        if let loginManager = loginManager {
+            loginManager.logIn(readPermissions:[ .publicProfile ], viewController: nil) { loginResult in
+                switch loginResult {
+                case .failed(let error):
+                    print(error)
+                    completion(.failed)
+                case .cancelled:
+                    print("User cancelled login.")
+                    completion(.cancelled)
+                case .success( _, _, let accessToken):
+                    print("Logged in!")
+                    if accessToken.authenticationToken.isEmptyOrWhitespace() == false {
+                        self.setUserToken(token: accessToken.authenticationToken)
+                        self.setUserExpirationDate(token: accessToken.expirationDate)
+                        completion(.completedSuccessfully)
+                    } else {
+                        completion(.failed)
+                    }
+                }
+            }
+        } else {
+            completion(.failed)
         }
     }
     
-    /// Pauses active player
-    public override func pluggablePlayerPause() {
-        // Replace this lines with your player implementation
-        if let player = self.playerViewController?.player {
-            player.pause()
+    /**
+     This method is being called in order to start logout process.
+     The completion should always be called when the process is done - no matter what is the result.
+    */
+    public func logout(_ completion: @escaping ((ZPLoginOperationStatus) -> Void)) {
+        if let loginManager = loginManager {
+            loginManager.logOut()
+            completion(.completedSuccessfully)
+        } else {
+            completion(.failed)
         }
     }
     
-    /// Stop playing loaded item
-    public override func pluggablePlayerStop() {
-        // Replace this lines with your player implementation
-        if let player = self.playerViewController?.player {
-            player.pause()
+    /**
+     This methood is called in order to verify if we need to start a login flow
+     Returns bool value indicating if the user is already verified if not  we start the login proccess
+     in this example we check if the login token exists and if it is valid
+    */
+    public func isAuthenticated() -> Bool {
+        var retVal = false
+        if let expirationDate = self.getUserExpirationDate(),
+            self.getUserToken().isEmpty == false {
+            let currentDate = Date()
+            if expirationDate > currentDate || expirationDate == currentDate {
+                retVal = true
+            }
         }
+        return retVal
     }
     
-    /// Is player playing a video
-    ///
-    /// - Returns: Returns true if playing a video, otherwise false.
-    public override func pluggablePlayerIsPlaying() -> Bool {
-        return false
+	/**
+     This methood is called in order to verify if authorization flow is in process
+    */
+    public func isPerformingAuthorizationFlow() -> Bool {
+        return self.isPerformingAuthorizationFlow()
     }
-```
+    ```
 
-#### Available only in Full screen mode
-``` swift
-    /// Call this method to start playing the given playable. Because this is a full screen player after calling this method the app doesn't have control of it's flow.
-    ///
-    /// - Parameters:
-    ///   - rootViewController: The app root view controller and it's topmostModal, in order to enable to present the player view controller.
-    ///   - configuration: ZPPlayerConfiguration object, including few configurations for the player instance. For example, should the player start muted until tapped for the first time.
-    public override func presentPlayerFullScreen(_ rootViewController: UIViewController, configuration: ZPPlayerConfiguration?) {
-        // Replace this lines with your player implementation
-        let animated : Bool = configuration?.animated ?? true;
-        
-        weak var weakSelf = self;
-        let rootVC : UIViewController = rootViewController.topmostModal()
-        //Present player
-        if let playerVC = self.pluggablePlayerViewController() {
-            rootVC.present(playerVC, animated:animated, completion: {
-                weakSelf?.playVideo()
-            })
+### ZPLoginProviderUserDataProtocol
+``` swift  
+     /**
+     Getter to the user Token usually can be used for authentication check
+    */
+    public func getUserToken() -> String {
+        var token = ""
+        if let userToken = UserDefaults.standard.string(forKey: "fb_login_token") {
+            token = userToken
         }
-    }
-```
-
-#### Available only in Inline mode
-``` swift
-     /// This func is called when a cell is requesting an inline player view to present inside.
-    ///
-    /// - Parameters:
-    ///   - rootViewController: The cell view controller.
-    ///   - container: The container view inside the cell.
-    public override func pluggablePlayerAddInline(_ rootViewController: UIViewController, container : UIView) {
-        // adding the player view to the cell container, replace this lines with your player implementation
-        // in the Zapp app the inline player cell is adding the video view in a ContainerView, so you should add it as ChildViewController and not as subview.
-        if let playerVC = self.pluggablePlayerViewController() {
-            rootViewController.addChildViewController(playerVC, to: container)
-            playerVC.view.matchParent()
-        }
+        return token
     }
     
-    /// This func is called when a cell is requesting to remove an inline player view that is already presented.
-    public override func pluggablePlayerRemoveInline(){
-        //get the container
-        let container = self.pluggablePlayerViewController()?.view.superview
-        super.pluggablePlayerRemoveInline()
-        //remove temp view
-        container?.removeFromSuperview()
+    /**
+     Setter for the user Token - usually set after login success
+     @Params: the authentication recieved when login successfuly
+     */
+    public func setUserToken(token: String?) {
+        UserDefaults.standard.set(token, forKey: "fb_login_token")
     }
-
     
+    /**
+     This methood is called in order to verify if we need to start a login flow with respect to the policies dictionary
+     @params policies - dictionary containing policies to be considered when returning the result 
+     Returns bool value indicating if the user is already verified if not  we start the login proccess
+     in this example we check if the login token exists and if it is valid
+    */
+    public func isUserComply(policies:[String: NSObject]) -> Bool {
+        return self.isAuthenticated()
+    }
 ```
 
 #### Using the Zapp Plugin Configuration JSON
@@ -167,11 +145,3 @@ You can use that on the plugin level like that:
         return nil
     }
 ```
-
-## Debug
-In order to be able to test and debug your project A->Z, you will need add your plugin to the `zapp-ios-plugins-starter-kit`, which can be cloned [here](https://github.com/applicaster/zapp-ios-plugins-starter-kit).
-
-## TO-DOs
-- [ ] readme improvements:
-    - add details about the `zapp-ios-plugins-starter-kit`
-    - add link to the iOS plugin player full documentation.
