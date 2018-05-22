@@ -9,13 +9,12 @@
 import UIKit
 import ZappPlugins
 
-/**
+/*
  This VC represent the last phase after we logged in or if we are already logged,
  it contains a logout screen that simulates how the login plugin is invokes from the zapp side if a logout request is beeing sent
  in other cases a logout can be called in other ways like a url request of this you can also implement the ZPAdapterProtocol
  and implement public func handleUrlScheme(_ params:NSDictionary) method in order to cath the url
- 
- */
+ **/
 class WelcomeScreenViewController: UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
