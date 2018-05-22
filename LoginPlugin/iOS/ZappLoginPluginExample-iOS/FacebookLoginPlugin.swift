@@ -23,15 +23,6 @@ import FacebookLogin
         super.init()
     }
     
-    /**
-     Initialization of login Plugin
-     @Params: configurationJSON - dictionary containing the Plugin setitngs as defined in the plugin manifest
-    */
-    public required init(configurationJSON: NSDictionary?) {
-        super.init()
-        self.loginManager = LoginManager()
-        self.configurationJSON = configurationJSON
-    }
     
 //MARK: ZPLoginProviderUserDataProtocol
     
@@ -62,6 +53,16 @@ import FacebookLogin
     }
     
 //MARK: ZPLoginProviderProtocol
+    
+    /**
+     Initialization of login Plugin instance
+     @Params: configurationJSON - dictionary containing the Plugin setitngs as defined in the plugin manifest
+     */
+    public required init(configurationJSON: NSDictionary?) {
+        super.init()
+        self.loginManager = LoginManager()
+        self.configurationJSON = configurationJSON
+    }
     
     /**
      Test User in order to login successfuly use these credentials
@@ -111,6 +112,7 @@ import FacebookLogin
             completion(.failed)
         }
     }
+    
     /**
      This methood is called in order to verify if we need to start a login flow
      Returns bool value indicating if the user is already verified if not  we start the login proccess
