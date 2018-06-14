@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -21,8 +22,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-
-    implementation 'com.applicaster:applicaster-android-sdk:2.32.7'
+    implementation 'com.applicaster:applicaster-android-sdk:2.29.25'
+    implementation project(':TestAnalyticsPlugin-Android')
 }
