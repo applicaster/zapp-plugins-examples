@@ -1,0 +1,31 @@
+[
+  {
+    "plugin": {
+      "api": {
+        "class_name": "com.applicaster.analytics.plugins.testanalyticsplugin_android.TestAnalyticsAgent"
+      },
+      "name": "Google Analytics",
+      "type": "analytics",
+      "platform": "android",
+      "identifier": "google_analytics_android",
+      "author_name": "Merav Zanany",
+      "description": "provide Google Analytics as agent",
+      "author_email": "m.zanany@applicaster.com",
+      "min_zapp_sdk": "6.2.0b12",
+      "react_native": false,
+      "dependency_name": "com.applicaster:TestAnalyticsProvider",
+      "manifest_version": "0.0.8",
+      "dependency_version": "1.6.+",
+      "ui_builder_support": true,
+      "dependency_repository_url": [],
+      "whitelisted_account_ids": []
+    },
+    "configuration_json": {
+      "mobile_app_account_id": "UA-120927512-1",
+      "do_not_set_client_id": "0",
+      "anonymize_user_ip": "0",
+      "screen_views": "1",
+      "blacklisted_events": ""
+    }
+  }
+]
