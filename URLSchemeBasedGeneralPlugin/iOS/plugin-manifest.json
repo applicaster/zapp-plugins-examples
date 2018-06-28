@@ -1,0 +1,48 @@
+{
+  "api": {
+    "require_startup_execution": false,
+    "class_name": "SampleGeneralPlugin",
+    "modules": [
+      "SampleGeneralPlugin"
+    ]
+  },
+  "dependency_repository_url": [
+
+  ],
+  "platform": "ios",
+  "author_name": "Liviu Romascanu",
+  "author_email": "l.romasca@applicaster.com",
+  "manifest_version": "0.1.0",
+  "name": "Sample General Plugin",
+  "description": "Sample code for general plugin for the zapp platform.",
+  "type": "general",
+  "identifier": "SampleGeneralPlugin",
+  "ui_builder_support": false,
+  "dependency_name": "SampleGeneralPlugin",
+  "dependency_version": "0.1.0",
+  "whitelisted_account_ids": [
+
+  ],
+  "min_zapp_sdk": "6.0.1",
+  "react_native": false,
+  "custom_configuration_fields": [
+    {
+      "type": "text",
+      "key": "SampleTextParameter",
+      "tooltip_text": "Sample Text parameter that will be available in the plugin configuration",
+      "default": "sample-text"
+    },
+    {
+      "type": "checkbox",
+      "key": "SampleTextBoolean",
+      "tooltip_text": "Sample text boolean that will be available in the plugin configuration",
+      "default": 0
+    },
+    {
+      "type": "colorpicker",
+      "key": "SampleColor",
+      "tooltip_text": "Sample color that will be available in the plugin configuration",
+      "default": "FFFFFFFF"
+    }
+  ]
+}

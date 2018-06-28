@@ -1,0 +1,400 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		39B5AC8320E52F10004F9119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5AC8220E52F10004F9119 /* AppDelegate.swift */; };
+		39B5AC8520E52F10004F9119 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B5AC8420E52F10004F9119 /* ViewController.swift */; };
+		39B5AC8820E52F10004F9119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B5AC8620E52F10004F9119 /* Main.storyboard */; };
+		39B5AC8A20E52F13004F9119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39B5AC8920E52F13004F9119 /* Assets.xcassets */; };
+		39B5AC8D20E52F13004F9119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B5AC8B20E52F13004F9119 /* LaunchScreen.storyboard */; };
+		948C989BD78D7AC25507109F /* Pods_ZappGeneralPluginExample_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9DCD3691CC53B6BE8C01CB /* Pods_ZappGeneralPluginExample_iOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		39B5AC7F20E52F10004F9119 /* ZappGeneralPluginExample-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZappGeneralPluginExample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39B5AC8220E52F10004F9119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		39B5AC8420E52F10004F9119 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		39B5AC8720E52F10004F9119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		39B5AC8920E52F13004F9119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39B5AC8C20E52F13004F9119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		39B5AC8E20E52F13004F9119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC9DCD3691CC53B6BE8C01CB /* Pods_ZappGeneralPluginExample_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZappGeneralPluginExample_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C823E37AA2B11F8DC5582E89 /* Pods-ZappGeneralPluginExample-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZappGeneralPluginExample-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZappGeneralPluginExample-iOS/Pods-ZappGeneralPluginExample-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		D65449E9C4B9C2591CFBDA36 /* Pods-ZappGeneralPluginExample-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZappGeneralPluginExample-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZappGeneralPluginExample-iOS/Pods-ZappGeneralPluginExample-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39B5AC7C20E52F10004F9119 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				948C989BD78D7AC25507109F /* Pods_ZappGeneralPluginExample_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B9EC270CD3B342EA5B2CED0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D65449E9C4B9C2591CFBDA36 /* Pods-ZappGeneralPluginExample-iOS.debug.xcconfig */,
+				C823E37AA2B11F8DC5582E89 /* Pods-ZappGeneralPluginExample-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		39B5AC7620E52F10004F9119 = {
+			isa = PBXGroup;
+			children = (
+				39B5AC8120E52F10004F9119 /* ZappGeneralPluginExample-iOS */,
+				39B5AC8020E52F10004F9119 /* Products */,
+				1B9EC270CD3B342EA5B2CED0 /* Pods */,
+				F7A92B9AA2C8C89B46376B13 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		39B5AC8020E52F10004F9119 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39B5AC7F20E52F10004F9119 /* ZappGeneralPluginExample-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39B5AC8120E52F10004F9119 /* ZappGeneralPluginExample-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				39B5AC8220E52F10004F9119 /* AppDelegate.swift */,
+				39B5AC8420E52F10004F9119 /* ViewController.swift */,
+				39B5AC8620E52F10004F9119 /* Main.storyboard */,
+				39B5AC8920E52F13004F9119 /* Assets.xcassets */,
+				39B5AC8B20E52F13004F9119 /* LaunchScreen.storyboard */,
+				39B5AC8E20E52F13004F9119 /* Info.plist */,
+			);
+			path = "ZappGeneralPluginExample-iOS";
+			sourceTree = "<group>";
+		};
+		F7A92B9AA2C8C89B46376B13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC9DCD3691CC53B6BE8C01CB /* Pods_ZappGeneralPluginExample_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		39B5AC7E20E52F10004F9119 /* ZappGeneralPluginExample-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39B5AC9120E52F13004F9119 /* Build configuration list for PBXNativeTarget "ZappGeneralPluginExample-iOS" */;
+			buildPhases = (
+				53DE0297D2159BED19D103F4 /* [CP] Check Pods Manifest.lock */,
+				39B5AC7B20E52F10004F9119 /* Sources */,
+				39B5AC7C20E52F10004F9119 /* Frameworks */,
+				39B5AC7D20E52F10004F9119 /* Resources */,
+				2C3E7060145B879B3F4CCB5A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ZappGeneralPluginExample-iOS";
+			productName = "ZappGeneralPluginExample-iOS";
+			productReference = 39B5AC7F20E52F10004F9119 /* ZappGeneralPluginExample-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		39B5AC7720E52F10004F9119 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Applicaster;
+				TargetAttributes = {
+					39B5AC7E20E52F10004F9119 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 39B5AC7A20E52F10004F9119 /* Build configuration list for PBXProject "ZappGeneralPluginExample-iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 39B5AC7620E52F10004F9119;
+			productRefGroup = 39B5AC8020E52F10004F9119 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				39B5AC7E20E52F10004F9119 /* ZappGeneralPluginExample-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39B5AC7D20E52F10004F9119 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39B5AC8D20E52F13004F9119 /* LaunchScreen.storyboard in Resources */,
+				39B5AC8A20E52F13004F9119 /* Assets.xcassets in Resources */,
+				39B5AC8820E52F10004F9119 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C3E7060145B879B3F4CCB5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZappGeneralPluginExample-iOS/Pods-ZappGeneralPluginExample-iOS-frameworks.sh",
+				"${PODS_ROOT}/ZappPlugins/ZappPlugins.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZappPlugins.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZappGeneralPluginExample-iOS/Pods-ZappGeneralPluginExample-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53DE0297D2159BED19D103F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZappGeneralPluginExample-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		39B5AC7B20E52F10004F9119 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39B5AC8520E52F10004F9119 /* ViewController.swift in Sources */,
+				39B5AC8320E52F10004F9119 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		39B5AC8620E52F10004F9119 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39B5AC8720E52F10004F9119 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		39B5AC8B20E52F13004F9119 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39B5AC8C20E52F13004F9119 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		39B5AC8F20E52F13004F9119 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		39B5AC9020E52F13004F9119 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		39B5AC9220E52F13004F9119 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D65449E9C4B9C2591CFBDA36 /* Pods-ZappGeneralPluginExample-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "ZappGeneralPluginExample-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.applicaster.ZappGeneralPluginExample-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		39B5AC9320E52F13004F9119 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C823E37AA2B11F8DC5582E89 /* Pods-ZappGeneralPluginExample-iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "ZappGeneralPluginExample-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.applicaster.ZappGeneralPluginExample-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		39B5AC7A20E52F10004F9119 /* Build configuration list for PBXProject "ZappGeneralPluginExample-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39B5AC8F20E52F13004F9119 /* Debug */,
+				39B5AC9020E52F13004F9119 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39B5AC9120E52F13004F9119 /* Build configuration list for PBXNativeTarget "ZappGeneralPluginExample-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39B5AC9220E52F13004F9119 /* Debug */,
+				39B5AC9320E52F13004F9119 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 39B5AC7720E52F10004F9119 /* Project object */;
+}
