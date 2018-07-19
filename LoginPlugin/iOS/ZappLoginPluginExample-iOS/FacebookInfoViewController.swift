@@ -51,7 +51,7 @@ import ZappPlugins
                 })
             }
         } else {
-            let alert = UIAlertController.init(title: "", message: "logout Failed", preferredStyle: .alert)
+            let alert = UIAlertController.init(title: "", message: "login Failed", preferredStyle: .alert)
             alert.addAction(UIAlertAction.init(title: "O.K", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
