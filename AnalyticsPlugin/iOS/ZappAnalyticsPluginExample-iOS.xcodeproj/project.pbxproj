@@ -171,7 +171,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZappAnalyticsPluginExample-iOS/Pods-ZappAnalyticsPluginExample-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/ApplicasterSDK/ApplicasterSDK.framework",
+				"${PODS_ROOT}/ApplicasterSDK/ApplicasterSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/FBNotifications/FBNotifications.framework",
