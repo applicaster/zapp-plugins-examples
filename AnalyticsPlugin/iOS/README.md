@@ -4,7 +4,7 @@ The ZappAnalyticsPluginExample-iOS is an example project for creating a analytic
 
 If you are not familiar with Zapp please visit [our website](http://applicaster.com/?page=product) for more details.
 
-The full [Zapp](http://zapp.applicaster.com) plugins documentation is available [here](http://zapp-tech-book.herokuapp.com).
+The full [Zapp](http://zapp.applicaster.com) plugins documentation is available [here](https://developer-zapp.applicaster.com).
 
 ## Getting Started
 Clone this project `$ git clone https://github.com/applicaster/zapp-plugins-examples`.
