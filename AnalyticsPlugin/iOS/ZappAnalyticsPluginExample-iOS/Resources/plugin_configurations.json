@@ -1,0 +1,23 @@
+[{
+	"plugin": {
+		"api": {
+			"class_name": "ZappAnalyticsPluginExample_iOS.TestAnalyticsProvider"
+		},
+		"author_name": "Zapp Developer",
+		"author_email": "applicaster@applicaster.com",
+		"manifest_version": "1.0.0",
+		"name": "Neon",
+		"description": "TestAnalyticsProvider",
+		"identifier": "TestAnalyticsProvider_iOS",
+		"type": "analytics",
+		"platform": "ios",
+		"min_zapp_sdk": "4.3.10-dev",
+		"whitelisted_account_ids": [],
+		"dependency_repository_url": [],
+		"dependency_name": "",
+		"dependency_version": ""
+	},
+	"configuration_json": {
+		"mobile_app_account_id": "UA-120927512-1"
+	}
+}]
