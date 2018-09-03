@@ -28,6 +28,7 @@
 		3B00410E211B81DC0071C859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B004116211BD6720071C859 /* TestAnalyticsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnalyticsProvider.swift; sourceTree = "<group>"; };
 		3B004119211BD9A80071C859 /* ZappAnalyticsPluginExample-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZappAnalyticsPluginExample-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		BBC0F465213D394000170783 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E6FA73731C29202689C02A43 /* Pods-ZappAnalyticsPluginExample-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZappAnalyticsPluginExample-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZappAnalyticsPluginExample-iOS/Pods-ZappAnalyticsPluginExample-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +74,7 @@
 		3B004101211B81DB0071C859 /* ZappAnalyticsPluginExample-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				BBC0F465213D394000170783 /* README.md */,
 				3B004102211B81DB0071C859 /* AppDelegate.swift */,
 				3B004104211B81DB0071C859 /* ViewController.swift */,
 				3B004116211BD6720071C859 /* TestAnalyticsProvider.swift */,
@@ -184,7 +186,11 @@
 				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${PODS_ROOT}/ZappAnalyticsPluginsSDK/ZappAnalyticsPluginsSDK.framework",
+				"${PODS_ROOT}/ZappGeneralPluginsSDK/ZappGeneralPluginsSDK.framework",
+				"${PODS_ROOT}/ZappLoginPluginsSDK/ZappLoginPluginsSDK.framework",
 				"${PODS_ROOT}/ZappPlugins/ZappPlugins.framework",
+				"${PODS_ROOT}/ZappPushPluginsSDK/ZappPushPluginsSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -202,7 +208,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZappAnalyticsPluginsSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZappGeneralPluginsSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZappLoginPluginsSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZappPlugins.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZappPushPluginsSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

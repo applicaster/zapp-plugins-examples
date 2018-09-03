@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ZappPlugins
 import ApplicasterSDK
 
 class ViewController: UIViewController {
