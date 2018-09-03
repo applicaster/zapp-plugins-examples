@@ -4,23 +4,25 @@ The ZappLoginPluginExample is an example project for creating a login plugin for
 
 If you are not familiar with Zapp please visit [our website](http://applicaster.com/?page=product) for more details.
 
-The full [Zapp](http://zapp.applicaster.com) plugins documentation is available [here](http://zapp-tech-book.herokuapp.com' to 'http://developer-zapp.applicaster.com).
+The full [Zapp](http://zapp.applicaster.com) plugins documentation is available [here](https://developer-zapp.applicaster.com).
+
+When you are starting a new iOS plugin our recommendation is to install our [Xcode templates for Applicaster plugins](https://github.com/applicaster/zapp-plugins-ios-templates). The templates will enable you to chose the plugin type in the Xcode "new project" screen. After selecting the plugin type, you will need to provide few general details on the plugin. Then, it will generate a new plugin project that includes the deployment files, like podspec and the plugin_manifest.json, and the plugin class itself including the relevant Zapp protocol.
 
 ## Getting Started
 Clone this project `$ git clone https://github.com/applicaster/zapp-plugins-examples.git`.
 and navigate to LoginPlugin -> iOS
-Run `$ pod install` in order to set the workspace.
+Run `$ pod update` in order to set the workspace.
 
-Open `ZappLoginPluginExample-iOS.xcworkspace` with Xcode 9.3.1 or above.
+Open `ZappLoginPluginExample-iOS.xcworkspace` with Xcode 9.4.
 
 ## Zapp Login Plugin API
 The Zapp login plugin API enables developers to integrate different login providers to the the Zapp Platform.
 
 The API contains the `ZPLoginProviderProtocol` and `ZPLoginProviderUserDataProtocol`
-In order to access the `ZPLoginProviderProtocol` and the `ZPLoginProviderUserDataProtocol`, you will need to import `ApplicasterSDK` and the `ZappPlugins` frameworks, for example:
+In order to access the `ZPLoginProviderProtocol` and the `ZPLoginProviderUserDataProtocol`, you will need to import `ApplicasterSDK` and the `ZappLoginPluginsSDK` frameworks, for example:
 ``` swift
 import Foundation
-import ZappPlugins
+import ZappLoginPluginsSDK
 import ApplicasterSDK
 ```
 

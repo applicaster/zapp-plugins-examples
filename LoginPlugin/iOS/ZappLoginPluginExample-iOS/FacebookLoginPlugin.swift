@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ZappPlugins
+import ZappLoginPluginsSDK
 import ApplicasterSDK
 import FacebookCore
 import FacebookLogin
@@ -22,7 +22,7 @@ import FacebookLogin
 @objc class FacebookLoginPlugin: NSObject, ZPLoginProviderProtocol, ZPLoginProviderUserDataProtocol {
     
     public var configurationJSON: NSDictionary?
-    var loginCompletion: ((ZappPlugins.ZPLoginOperationStatus) -> Swift.Void)?
+    var loginCompletion: ((ZappLoginPluginsSDK.ZPLoginOperationStatus) -> Swift.Void)?
     var fbToken: AccessToken?
     var loginManager:LoginManager?
     
