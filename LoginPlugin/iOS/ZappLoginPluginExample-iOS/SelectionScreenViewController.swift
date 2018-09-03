@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import ApplicasterSDK
+import ZappLoginPluginsSDK
 
 /*
  This Vc constist from a list of login plugins ,it starts the app flow form fist phase of selecting and initializing the selected,

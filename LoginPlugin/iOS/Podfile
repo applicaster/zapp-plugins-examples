@@ -12,8 +12,8 @@ pre_install do |installer|
 end
 
 def shared_pods
-    pod 'ZappPlugins'
-    pod 'ApplicasterSDK'
+    pod 'ZappLoginPluginsSDK'
+    pod 'ApplicasterSDK', '~> 7.2.0'
     pod 'FacebookCore'
     pod 'FacebookLogin'
 end
