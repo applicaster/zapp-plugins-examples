@@ -6,12 +6,14 @@ If you are not familiar with Zapp please visit [our website](http://applicaster.
 
 The full [Zapp](http://zapp.applicaster.com) plugins documentation is available [here](https://developer-zapp.applicaster.com).
 
+When you are starting a new iOS plugin our recommendation is to install our [Xcode templates for Applicaster plugins](https://github.com/applicaster/zapp-plugins-ios-templates). The templates will enable you to chose the plugin type in the Xcode "new project" screen. After selecting the plugin type, you will need to provide few general details on the plugin. Then, it will generate a new plugin project that includes the deployment files, like podspec and the plugin_manifest.json, and the plugin class itself including the relevant Zapp protocol.
+
 ## Getting Started
 Clone this project `$ git clone https://github.com/applicaster/zapp-plugins-examples`.
 
 CD into `zapp-plugins-examples/Analytics/iOS` 
 
-Run `$ pod install` in order to set the workspace.
+Run `$ pod update` in order to set the workspace.
 
 Open `ZappAnalyticsPluginExample-iOS.xcworkspace` with Xcode 8.3.3 or above.
 
@@ -20,13 +22,11 @@ The Zapp analytics plugin API enables developers to integrate different analytic
 
 The API contains the `ZPAnalyticsProvider` protocol which should be implemented by your provider.
 
-In order to access the `ZPAnalyticsProvider`, you will need to import `ApplicasterSDK` and the `ZappPlugins` frameworks, for example:
+In order to access the `ZPAnalyticsProvider`, you will need to import  `ZappAnalyticsPluginsSDK`  which include the `ZPAnalyticsProvider` and the relevant protocol, for example:
 
 ```
 import Foundation
-import ZappPlugins
-import ApplicasterSDK
-import AVKit
+import ZappAnalyticsPluginsSDK
 ```
 
 ### ZPAnalyticsProvider
@@ -125,7 +125,7 @@ import AVKit
     
 
 #### Using the Zapp Plugin Configuration JSON
-When creating a plugin in Zapp we can create custom configuration fields. This enable the Zapp user to fill relevant details for the specific plugin. More details can found in the [Zapp Plugin Manifest Format](http://zapp-tech-book.herokuapp.com/zappifest/plugins-manifest-format.html).
+When creating a plugin in Zapp we can create custom configuration fields. This enable the Zapp user to fill relevant details for the specific plugin. More details can found in the [Zapp guide for deploy and submit](https://developer-zapp.applicaster.com/getting-started/deploy-and-submit.html).
 You can use these configuration in the configureProvider function like so:
 
 ```
@@ -134,9 +134,3 @@ if let value = self.providerProperties["some_custom_config_key"] as? String {
 }
 ```
 
-## Debug
-In order to be able to test and debug your project A->Z, you will need add your plugin to the `zapp-ios-plugins-starter-kit`, which can be cloned [here](https://github.com/applicaster/zapp-ios-plugins-starter-kit).
-
-## TO-DOs
-- [ ] readme improvements:
-    - add details about the `zapp-ios-plugins-starter-kit`

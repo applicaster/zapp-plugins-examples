@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import ZappPlugins
-import ApplicasterSDK
+import ZappAnalyticsPluginsSDK
 
 open class TestAnalyticsProvider: ZPAnalyticsProvider {
     
