@@ -174,7 +174,7 @@ Ones you have implement you mapper you can use it in your `Presenter` class:
 override fun getSize(withContainer: Boolean): Size = SizeMapper.map(adConfig.adType, adConfig.adSize)
 ```
 
-###Provider Name
+### Provider Name
 
 Due to analytics needs in Applicaster infrastructure you need to provide a human name for your provider. In this case it will be `"DFP"`, so implementation will look as follows:
 ```
@@ -447,7 +447,7 @@ class Plugin : AdPlugin {
 
 ## How to publish plugin
 
-Ones you have implemented your plugin it is ready to publish. You can read more about publishing here
+Ones you have implemented your plugin it is ready to publish. You can read more about publishing [here](https://developer-zapp.applicaster.com/getting-started/deploy-and-submit.html)
 
 ## How to use plugin in app
 
