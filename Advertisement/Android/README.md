@@ -1,22 +1,68 @@
 # How to create advertisement plugin
-To create advertisement plugin for Applicaster you need to configure you project enviroment (link here).
+To create advertisement plugin you need to create new app project and configure you project [link here](https://developer-zapp.applicaster.com/dev-env/intro.html).
+Below you have example main activiry which use advertisement plugin:
+
+```
+class MainActivity : AppCompatActivity(), com.applicaster.plugins.advertisement.view.AdView {
+
+    lateinit var plugin : AdPlugin
+    lateinit var bannerPreseter : AdViewPresenter
+    lateinit var interstitialPreseter : AdViewPresenter
+    private val adView: RelativeLayout by lazy { findViewById<RelativeLayout>(R.id.adView) }
+
+    override fun adLoadFailed(sender: AdViewPresenter, exc: Exception) {
+        Snackbar.make(adView, exc.localizedMessage, Snackbar.LENGTH_LONG).show()
+    }
+
+    override fun adLoaded(sender: AdViewPresenter, view: View) {
+        if (sender.getConfig().adType === AdType.INTERSTITIAL) {
+            sender.showInterstitial()
+        } else {
+            adView.removeAllViews()
+            adView.addView(view)
+        }
+    }
+
+    override fun stateChanged(sender: AdViewPresenter, adViewState: AdViewState) {
+        //analytics can goes here here
+    }
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        plugin = Plugin()
+        bannerPreseter = plugin.createAd(this,this)
+        interstitialPreseter = plugin.createAd(this,this)
+        // Load an ad into the AdMob banner view.
+
+        bannerPreseter.loadAd(AdConfig("ca-app-pub-3940256099942544/6300978111", AdType.SCREEN_BANNER, "STANDARD_BANNER"))
+        interstitialPreseter.loadAd(AdConfig("ca-app-pub-3940256099942544/1033173712", adUnitId, AdType.INTERSTITIAL, "FULL_SCREEN"))
+
+    }
+
+}
+```
+
 When you have your project first thing you need to do is to add module library to this project - this will be your plugin.
 ## Creating library module
 
-To create new module in your Applicaster project you need to select `File -> New -> New Module`
+To create new module in your  project you need to select `File -> New -> New Module`
 
 ![step1.png](img/step1.jpg)
 
-Then you should select `Android Library` and name your project. For purpose of this tutorial we Named it advertisement, however name should be related to provider or specific project, eg. for DSP provider it will be called `DSP Plugin` for AdMob it will be `AdMob Plugin` . If your plugin is whitelisted for specific project then please name it with pattern `ProjectName + Provider + "Plugin"`
+Then you should select `Android Library` and name your plugin project. For purpose of this tutorial we Named it advertisement, however name should be related to provider or specific project, eg. for DSP provider it will be called `DSP Plugin` for AdMob it will be `AdMob Plugin` . If your plugin is whitelisted for specific project then please name it with pattern `ProjectName + Provider + "Plugin"`
 
 ![step2-3.png](img/step2-3.png)
 
 Press Finish to create your module.
 
-## Import module to Applicaster project solution
+## Import module to your project solution
 To make sure that module has been imported to your solution and you can implement it please open `settings.gradle` file and make sure gradle settings contain project and include it to solution as shown below.
 
 ![step4.png](img/step4.png)
+
 Before you will be able to proceed you need to synchronize your gralde so you could see your module imported in your project tree view.
 
 ![step11.png](img/step11.png)
@@ -26,14 +72,16 @@ After syncing you should be able to see your plugin gradle. Please open it.
 ![step5.png](img/step5.png)
 
 TIP: If you can't find advertisement gradles, please change view type above to Android
+
 ![step6.png](img/step6.png)
 
-In your plugin gradle please add access to applicaster maven. Please note `MAVEN_USERNAME` and `MAVEN_PASSWORD` are enviroment variabled if you don't have them, please check this link. if you don't have `repositories` block please add this to you `android` block. 
+In your plugin gradle please add access to applicaster maven. Please note `MAVEN_USERNAME` and `MAVEN_PASSWORD` are enviroment variabled if you don't have them, please check [this link](https://developer-zapp.applicaster.com/dev-env/android.html). if you don't have `repositories` block please add this to you `android` block.
+
 ###### IMPORTANT you should NEVER modify any other gradle file then `your pluggin` or `app`
 
 ![step7.png](img/step7.png)
 
-After you congigured Maven please add Applicaster SDK to `your plugin gradle`. Please check actual version for Applicaster SDK. Also make sure you use the same android tools version.
+After you congigured Maven please add Applicaster SDK to `your plugin gradle`. Please check actual version for Applicaster SDK.
 
 ![step8.png](img/step8.png)
 
@@ -56,6 +104,7 @@ Advertisement Plugin is using MVP pattern, so your plugin needs to implement int
 For DFP Ad Provider context is needed toinitialize both itnerstitials and banners. Adding var to Kotlin constructor will add variable to class.
 
 ![step12.png](img/step12.png)
+
 ### AdViewPresenter itenrface implementation
 Android Studio makes interface implementation quicker using autogenerated code like it is shown below:
 
@@ -69,7 +118,7 @@ Ones the methods are generated you can start adding some code.
 
 ###Variables
 
-This tutorial will show 2 types of advertisement. `Banner` and `Interstitial` and for both of them class variables should be created. Next variable is `AdView` interface which is implemented by Applicaster SDK and on this view Banner or Interstitial will be shown.
+This tutorial will show 2 types of advertisement. `Banner` and `Interstitial` and for both of them class variables should be created. Next variable is `AdView` interface which should be implemented by your consuming app
 
 ![step15.png](img/step15.png)
 
@@ -78,6 +127,7 @@ This tutorial will show 2 types of advertisement. `Banner` and `Interstitial` an
 `AdConfig` is a configuration variable which specify `banner size`, `banner type` and `advertisment unit ID` and it will be used for loading banner or interstitial.
 
 ![step16.png](img/step16.png)
+
 For advertisement purpose `getAdConfig()` should return configuration provided in `loadAd(...)` method
 
 ![step17.png](img/step17.png)
@@ -87,6 +137,7 @@ For advertisement purpose `getAdConfig()` should return configuration provided i
 Like in most MVP cases view handler will be hold by presenter. Presenter get instance `AdView` in `init(...)` method.
 
 ![step18.png](img/step18.png)
+
 ###Size Mapper
 Representation of advertisement sizes in Applicaster SDK is based on string keynames. In your plugin you need to provide a mapper which return a size in pixels from specific keyname.
 
@@ -198,8 +249,8 @@ Calling `adView.adLoaded(this@Presenter, null)` is crutial for showing interstit
 Calling `adView.adLoadFailed(...)` is important to inform sdk that loading advert has failed.
 
 
-**Step 6** Analytics callbacks
-In terms of proper work of analytics plugins in our Applicaster infrustructure you should've use adView.stateChange to inform SDK about all state changes occuring for you advert.
+**Step 6** State change callbacks
+In case you might want to observe state change in your app you should've use adView.stateChange to inform about all state changes occuring for your advert.
 
 ```
     override fun loadAd(adConfig: AdConfig) {
@@ -323,8 +374,8 @@ Calling `adView.adLoaded(this@Presenter, publisherAdView)` is crutial for showin
 Calling `adView.adLoadFailed(...)` is important to inform sdk that loading advert has failed.
 
 
-**Step 6** Analytics callbacks
-In terms of proper work of analytics plugins in Applicaster infrustructure you should've call adView.stateChange to inform SDK about all state changes occuring for you advert.
+**Step 6** State change callbacks
+In case you might want to observe state change in your app you should've use adView.stateChange to inform about all state changes occuring for your advert.
 
 ```
     override fun loadAd(adConfig: AdConfig) {
