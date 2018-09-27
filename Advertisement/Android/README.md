@@ -141,7 +141,7 @@ Like in most MVP cases view handler will be hold by presenter. Presenter get ins
 ### Size Mapper
 Representation of advertisement sizes in Applicaster SDK is based on string keynames. In your plugin you need to provide a mapper which return a size in pixels from specific keyname.
 
-`map` function of `SizeMapper` takes 2 arguments both taken from `AdConfig`. `AdType` deteterminate is this an `INTERSTITIAL` or `BANNER`. `AdViewSize` is keyword for size of na advert.
+`map` function of `SizeMapper` takes 2 arguments both taken from `AdConfig`. `AdType` deteterminate is this an `INTERSTITIAL` or `BANNER`. `AdViewSize` is keyword for size of an advert.
 ```
 object SizeMapper {
     var SMART_BANNER = 50
@@ -449,8 +449,5 @@ class Plugin : AdPlugin {
 
 Ones you have implemented your plugin it is ready to publish. You can read more about publishing [here](https://developer-zapp.applicaster.com/getting-started/deploy-and-submit.html)
 
-## How to use plugin in app
-
-You can read more about how to use plugin in your app here
 
 
