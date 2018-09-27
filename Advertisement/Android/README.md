@@ -101,7 +101,7 @@ At this step all configuration is done and you can sync the project to apply all
 Advertisement Plugin is using MVP pattern, so your plugin needs to implement interface for AdViewPresenter. Presenter is holding reference to AdView and AdView interface implementation is a real View used in Applicaster SDK.
 
 ### Import AdViewPresenter
-For DFP Ad Provider context is needed toinitialize both itnerstitials and banners. Adding var to Kotlin constructor will add variable to class.
+For DFP Ad Provider context is needed to initialize both itnerstitials and banners. Adding var to Kotlin constructor will add variable to class.
 
 ![step12.png](img/step12.png)
 
