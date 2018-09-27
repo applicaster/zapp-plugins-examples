@@ -1,5 +1,5 @@
 # How to create advertisement plugin
-To create advertisement plugin you need to create new app project and configure you project [link here](https://developer-zapp.applicaster.com/dev-env/intro.html).
+To create advertisement plugin you need to create new app project and configure your project [link here](https://developer-zapp.applicaster.com/dev-env/intro.html).
 Below you have example main activiry which use advertisement plugin:
 
 ```
@@ -52,7 +52,7 @@ To create new module in your  project you need to select `File -> New -> New Mod
 
 ![step1.png](img/step1.jpg)
 
-Then you should select `Android Library` and name your plugin project. For purpose of this tutorial we Named it advertisement, however name should be related to provider or specific project, eg. for DSP provider it will be called `DSP Plugin` for AdMob it will be `AdMob Plugin` . If your plugin is whitelisted for specific project then please name it with pattern `ProjectName + Provider + "Plugin"`
+Then you should select `Android Library` and name your plugin project. For purpose of this tutorial we named it advertisement, however name should be related to provider or specific project, eg. for DSP provider it will be called `DSP Plugin` for AdMob it will be `AdMob Plugin` . If your plugin is whitelisted for specific project then please name it with pattern `ProjectName + Provider + "Plugin"`
 
 ![step2-3.png](img/step2-3.png)
 
