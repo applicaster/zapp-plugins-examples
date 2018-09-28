@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZappAdvertisementPluginExample_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttt-pi-EfM">
+                                <rect key="frame" x="0.0" y="40" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bMc-gi-9ZG"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUZ-WY-lKU">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xMg-bh-R3n"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozr-W3-xLb">
+                                <rect key="frame" x="0.0" y="110" width="375" height="150"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Zlx-82-G4O"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldv-ai-qfZ">
+                                <rect key="frame" x="0.0" y="280" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DHq-Cb-abr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vUZ-WY-lKU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0KS-e3-tgp"/>
+                            <constraint firstItem="ozr-W3-xLb" firstAttribute="top" secondItem="ttt-pi-EfM" secondAttribute="bottom" constant="20" id="1YN-6v-83D"/>
+                            <constraint firstItem="ldv-ai-qfZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hjp-8b-USG"/>
+                            <constraint firstItem="vUZ-WY-lKU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UQG-oH-rpz"/>
+                            <constraint firstItem="ozr-W3-xLb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y29-hK-9xy"/>
+                            <constraint firstItem="vUZ-WY-lKU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ZPv-KA-a6W"/>
+                            <constraint firstItem="ldv-ai-qfZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c2K-Uq-uif"/>
+                            <constraint firstItem="ttt-pi-EfM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sXk-jz-SzI"/>
+                            <constraint firstItem="ldv-ai-qfZ" firstAttribute="top" secondItem="ozr-W3-xLb" secondAttribute="bottom" constant="20" id="tOP-6R-XFf"/>
+                            <constraint firstItem="ozr-W3-xLb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tb2-wy-OG7"/>
+                            <constraint firstItem="ttt-pi-EfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="w57-VC-hLR"/>
+                            <constraint firstItem="ttt-pi-EfM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="x2B-al-kEM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="inlineBannerContainerView" destination="ttt-pi-EfM" id="wvU-av-1t0"/>
+                        <outlet property="inlineBannerHeightConstraint" destination="bMc-gi-9ZG" id="Vuc-yG-SIU"/>
+                        <outlet property="inlineBoxBannerContainerView" destination="ozr-W3-xLb" id="obL-cJ-JYu"/>
+                        <outlet property="inlineBoxBannerHeightConstraint" destination="Zlx-82-G4O" id="ff8-g9-eSh"/>
+                        <outlet property="inlineSmartBannerContainerView" destination="ldv-ai-qfZ" id="KRi-H9-a9W"/>
+                        <outlet property="inlineSmartBannerHeightConstraint" destination="DHq-Cb-abr" id="zYJ-pL-2PA"/>
+                        <outlet property="screenBannerContainerView" destination="vUZ-WY-lKU" id="peU-rg-cHO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125.59999999999999" y="119.1904047976012"/>
+        </scene>
+    </scenes>
+</document>
