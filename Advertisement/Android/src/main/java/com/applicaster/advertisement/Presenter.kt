@@ -99,19 +99,17 @@ class Presenter(var context: Context) : AdViewPresenter {
             loadBannerAd()
         }
     }
-    @SuppressLint("MissingPermission")
+
     fun loadBannerAd() {
         val adRequest = PublisherAdRequest.Builder().build()
         adView.stateChanged(this@Presenter, AdViewState.Loading)
         publisherAdView.loadAd(adRequest)
     }
 
-    @SuppressLint("MissingPermission")
     fun loadInterstitialAd() {
         adView.stateChanged(this@Presenter, AdViewState.Loading)
         publisherInterstitialAd.loadAd(PublisherAdRequest.Builder().build())
     }
-
 
     override fun getSize(withContainer: Boolean): Size = SizeMapper.map(adConfig.adType, adConfig.adSize)
 
