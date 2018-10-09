@@ -8,6 +8,7 @@
 
 import Foundation
 import ZappPlugins
+import ZappGeneralPluginsSDK
 
 @objc public class SampleGeneralPlugin: ZPGeneralBaseProvider {
     

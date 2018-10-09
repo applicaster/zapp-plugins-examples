@@ -23,6 +23,7 @@ Pod::Spec.new do |s|
       "SampleGeneralPluginResources/**/*.xib",
       "SampleGeneralPluginResources/**/*.png"
     ]
+    c.dependency 'ZappGeneralPluginsSDK'
     c.dependency 'ZappPlugins'
   end
 
