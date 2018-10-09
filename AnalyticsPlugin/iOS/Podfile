@@ -8,7 +8,7 @@ source 'git@github.com:CocoaPods/Specs.git'
 
 def shared_pods
 pod 'ZappAnalyticsPluginsSDK'
-pod 'ApplicasterSDK', '~> 7.0'
+pod 'ApplicasterSDK', '~> 7.3'
 pod 'GoogleAnalytics'
 end
 
