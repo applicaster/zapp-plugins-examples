@@ -13,7 +13,7 @@ Clone this project `$ git clone https://github.com/applicaster/zapp-plugins-exam
 and navigate to LoginPlugin -> iOS
 Run `$ pod update` in order to set the workspace.
 
-Open `ZappLoginPluginExample-iOS.xcworkspace` with Xcode 9.4.
+Open `ZappLoginPluginExample-iOS.xcworkspace` with Xcode 10.
 
 ## Zapp Login Plugin API
 The Zapp login plugin API enables developers to integrate different login providers to the the Zapp Platform.

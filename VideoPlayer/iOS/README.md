@@ -11,7 +11,7 @@ Clone this project `$ git clone https://github.com/applicaster/ZappPluginPlayerE
 
 Run `$ pod install` in order to set the workspace.
 
-Open `ZappPluginPlayerExample-iOS.xcworkspace` with Xcode 8.3.3 or above.
+Open `ZappPluginPlayerExample-iOS.xcworkspace` with Xcode 10.
 
 ## Zapp Plugin Player API
 The Zapp plugin player API enables developers to integrate different players to the the Zapp Platform.

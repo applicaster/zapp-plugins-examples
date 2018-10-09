@@ -12,7 +12,7 @@ In this example the only implemented call is `func handleUrlScheme(_ params: NSD
 
 ## Project setup
 * Run `pod update` in the main library
-* Open `ZappGeneralPluginExample-iOS.xcWorkspace`
+* Open `ZappGeneralPluginExample-iOS.xcWorkspace` with Xcode 10.
 * Hit run
 
 There are 2 buttons:

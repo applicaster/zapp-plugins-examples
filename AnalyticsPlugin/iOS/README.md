@@ -15,7 +15,7 @@ CD into `zapp-plugins-examples/Analytics/iOS`
 
 Run `$ pod update` in order to set the workspace.
 
-Open `ZappAnalyticsPluginExample-iOS.xcworkspace` with Xcode 8.3.3 or above.
+Open `ZappAnalyticsPluginExample-iOS.xcworkspace` with Xcode 10.
 
 ## Zapp Analytics Provider API
 The Zapp analytics plugin API enables developers to integrate different analytic providers (i.e Google Analytics, Firebase, etc) to the the Zapp Platform.
