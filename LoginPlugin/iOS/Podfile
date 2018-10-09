@@ -13,7 +13,7 @@ end
 
 def shared_pods
     pod 'ZappLoginPluginsSDK'
-    pod 'ApplicasterSDK', '~> 7.2.0'
+    pod 'ApplicasterSDK', '~> 7.0'
     pod 'FacebookCore'
     pod 'FacebookLogin'
 end
