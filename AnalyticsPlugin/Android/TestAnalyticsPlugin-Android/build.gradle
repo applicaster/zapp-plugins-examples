@@ -39,7 +39,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // Applicaster SDK
-    implementation 'com.applicaster:applicaster-android-sdk:2.29.25'
+    implementation 'com.applicaster:applicaster-android-sdk:2.33.20'
 
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.google.android.gms:play-services-analytics:11.0.4'
