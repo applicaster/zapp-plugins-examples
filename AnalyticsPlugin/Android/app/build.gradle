@@ -11,6 +11,12 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         debug {
             minifyEnabled false
@@ -26,6 +32,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.applicaster:applicaster-android-sdk:2.29.25'
+    implementation 'com.applicaster:applicaster-android-sdk:2.33.20'
+    implementation 'com.google.dagger:dagger:2.8'
     implementation project(':TestAnalyticsPlugin-Android')
 }
