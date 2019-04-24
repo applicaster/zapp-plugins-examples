@@ -22,6 +22,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.applicaster:applicaster-android-sdk:2.29.25'
+    implementation 'com.applicaster:applicaster-android-sdk:2.33.20'
+    implementation 'com.google.dagger:dagger:2.8'
     implementation project(':testfullscreenplugin-android')
 }

@@ -8,7 +8,6 @@
 
 import Foundation
 import ZappLoginPluginsSDK
-import ApplicasterSDK
 import FacebookCore
 import FacebookLogin
 
