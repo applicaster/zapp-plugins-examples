@@ -19,9 +19,8 @@ Open `ZappLoginPluginExample-iOS.xcworkspace` with Xcode 10.
 The Zapp login plugin API enables developers to integrate different login providers to the the Zapp Platform.
 
 The API contains the `ZPLoginProviderProtocol` and `ZPLoginProviderUserDataProtocol`
-In order to access the `ZPLoginProviderProtocol` and the `ZPLoginProviderUserDataProtocol`, you will need to import `ApplicasterSDK` and the `ZappLoginPluginsSDK` frameworks, for example:
+In order to access the `ZPLoginProviderProtocol` and the `ZPLoginProviderUserDataProtocol`, you will need to import the `ZappLoginPluginsSDK` framework, for example:
 ``` swift
-import Foundation
 import ZappLoginPluginsSDK
 ```
 
