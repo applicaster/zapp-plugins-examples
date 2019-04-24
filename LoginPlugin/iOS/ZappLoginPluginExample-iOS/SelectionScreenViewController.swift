@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import ApplicasterSDK
 import ZappLoginPluginsSDK
 
 /*

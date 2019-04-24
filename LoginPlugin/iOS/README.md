@@ -23,7 +23,6 @@ In order to access the `ZPLoginProviderProtocol` and the `ZPLoginProviderUserDat
 ``` swift
 import Foundation
 import ZappLoginPluginsSDK
-import ApplicasterSDK
 ```
 
 ### ZPLoginProviderProtocol
@@ -37,7 +36,7 @@ import ApplicasterSDK
         self.loginManager = LoginManager()
         self.configurationJSON = configurationJSON
     }
-    
+
     /**
      This method is being called after the isAuthenticated() method returned a false value, meaning, the user is not 		 logged in, It starts the login process.
      The completion should always be called when the process is done - no matter what is the result.
@@ -67,7 +66,7 @@ import ApplicasterSDK
             completion(.failed)
         }
     }
-    
+
     /**
      This method is being called in order to start logout process.
      The completion should always be called when the process is done - no matter what is the result.
@@ -80,7 +79,7 @@ import ApplicasterSDK
             completion(.failed)
         }
     }
-    
+
     /**
      This methood is called in order to verify if we need to start a login flow
      for example play method is invoked on a player, the player first checks if a login plugin exist
@@ -99,7 +98,7 @@ import ApplicasterSDK
         }
         return retVal
     }
-    
+
 	/**
      This methood is called in order to verify if authorization flow is in process
     */
@@ -120,7 +119,7 @@ import ApplicasterSDK
         }
         return token
     }
-    
+
     /**
      Setter for the user Token - usually set after login success
      @Params: the authentication recieved when login successfuly
@@ -128,10 +127,10 @@ import ApplicasterSDK
     public func setUserToken(token: String?) {
         UserDefaults.standard.set(token, forKey: "fb_login_token")
     }
-    
+
     /**
      This methood is called in order to verify if we need to start a login flow with respect to the policies dictionary
-     @params policies - dictionary containing policies to be considered when returning the result 
+     @params policies - dictionary containing policies to be considered when returning the result
      Returns bool value indicating if the user is already verified if not  we start the login proccess
      in this example we check if the login token exists and if it is valid
     */
