@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">IAP Test Plugin</string>
+    <string name="btn_error_dialog_ok">OK</string>
+    <string name="message_error_dialog_default">Ooops. Something goes wrong.</string>
+    <string name="title_error_dialog">Error</string>
+</resources>

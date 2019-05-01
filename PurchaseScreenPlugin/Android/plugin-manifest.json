@@ -1,0 +1,28 @@
+{
+  "api": {
+    "require_startup_execution": false,
+    "class_name": "com.applicaster.iaptestplugin.IAPPlugin",
+    "proguard_rules": "##---------------Proguard configuration for IAP Screen Plugin ----------\n-keep public class com.applicaster.iaptestplugin.IAPPlugin{public <fields>;public <methods>;}\n"
+},
+"platform": "android",
+"author_name": "Alex Khomich",
+"author_email": "a.khomich@applicaster.com",
+"manifest_version": "0.0.1",
+"dependency_version": "0.0.1",
+"name": "IAP Test Plugin",
+"description": "Test Plugin for Purchases",
+"type": "general",
+"screen": true,
+"identifier": "IAPPlugin-Test",
+"ui_builder_support": true,
+"dependency_name": "com.applicaster:iap-test-plugin",
+"whitelisted_account_ids": [
+"5b3214c38ca4b20008b99d73"
+],
+"min_zapp_sdk": "7.0.0",
+"deprecated_since_zapp_sdk": "",
+"unsupported_since_zapp_sdk": "",
+"react_native": false,
+"custom_configuration_fields": []
+}
+  
