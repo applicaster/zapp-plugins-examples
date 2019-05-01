@@ -35,6 +35,7 @@ This example include an Andorid and iOS projects that present the implementation
 Zapp enables to add different login providers to the Zapp Marketplace.
 This example include an iOS project that present the implementation of an login plugin.
 
+* [Full guide for creating a login plugin](https://developer-zapp.applicaster.com/login/intro.html)
 * [iOS example](./LoginPlugin/iOS)
 
 ## Submit an Issue
