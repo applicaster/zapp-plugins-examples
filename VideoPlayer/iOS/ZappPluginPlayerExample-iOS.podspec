@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.author           = { "Udi Lumnitz" => "u.lumnitz@applicaster.com" }
   s.source           = { :git => "git@github.com:applicaster/ZappPluginPlayerExample-iOS.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, '9.0'
+  s.platform     = :ios, '10.0'
   s.requires_arc = true
 
   s.public_header_files = 'ZappPluginPlayerExample-iOS/**/*.h'
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
                   "ZappPluginPlayerExample-iOS/**/*.png"]
 
   s.xcconfig =  { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
-                  'ENABLE_BITCODE' => 'NO',
+                  'ENABLE_BITCODE' => 'YES',
                   'OTHER_LDFLAGS' => '$(inherited)',
                   'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**',
                   'LIBRARY_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**'
