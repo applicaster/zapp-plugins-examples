@@ -2,7 +2,7 @@
 
 The following are two example projects of a basic setup for a Full Screen Plugin.
 
-* [iOS](./android)
+* [iOS](./iOS)
 * [Android](./android)
 
 For detailed documentation please refer to the Applicaster developer portal:
