@@ -1,7 +1,11 @@
-# Zapp plugin full screen
+# Zapp Full Screen Plugins
 
-Zapp enables to you to create plugins which take full control over the UI when executed.
+The following are two example projects of a basic setup for a Full Screen Plugin.
 
-This example include an Andorid and iOS projects that present the implementation of the `Zapp pluggable player API`.
+* [iOS](./android)
+* [Android](./android)
 
-[Android overview](./android)
+For detailed documentation please refer to the Applicaster developer portal:
+* [Screen Plugins](https://developer.applicaster.com/ui-builder/intro.html)
+* [iOS Full Scren Plugin Documentation](https://developer.applicaster.com/ui-builder/ios/ScreenPlugin.html)
+* [Android Full Screen Plugin Documentation](https://developer.applicaster.com/ui-builder/android/ScreenPlugin.html)
