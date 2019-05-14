@@ -1,0 +1,29 @@
+[
+  {
+    "plugin": {
+      "api": {
+        "class_name": "FullScreenPlugin",
+        "modules": [
+          "FullScreenPlugin"
+        ]
+      },
+      "dependency_repository_url": [],
+      "platform": "ios",
+      "author_name": "Liviu Romascanu",
+      "author_email": "l.romasca@applicaster.com",
+      "manifest_version": "1.0",
+      "name": "Full Screen Plugin Example",
+      "description": "Full Screen Plugin Example",
+      "type": "general",
+      "identifier": "FullScreenPlugin",
+      "ui_builder_support": true,
+      "dependency_name": "FullScreenPlugin",
+      "dependency_version": "1.0",
+      "whitelisted_account_ids": [
+      ],
+      "min_zapp_sdk": "10.0.2-Dev",
+      "react_native": false,
+    },
+    "configuration_json": null
+  }
+]
