@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@color/top_bar_background"
+    >
+
+
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/up_arrow_selector"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:scaleType="fitXY"
+        android:layout_marginHorizontal="5dp"
+        android:visibility="visible" />
+
+    <com.applicaster.util.ui.CustomTextView
+        android:id="@+id/title"
+        style="@style/TopBarTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        />
+
+</RelativeLayout>

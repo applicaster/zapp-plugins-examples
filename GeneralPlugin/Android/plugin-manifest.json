@@ -1,0 +1,33 @@
+{
+    "api": {
+        "require_startup_execution": false,
+        "class_name": "com.applicaster.web.plugins.iai.IAIWebAdapter"
+    },
+    "dependency_repository_url": [],
+    "platform": "android",
+    "author_name": "Elad Kariti",
+    "author_email": "e.kariti@applicaster.com",
+    "manifest_version": "0.0.1",
+    "dependency_version": "0.0.+",
+    "dependency_name": "com.applicaster:IAIWeb",
+    "name": "IAI Web Plugin",
+    "screen": true,
+    "description": "IAI Web Plugin for Android",
+    "type": "general",
+    "identifier": "iai_web",
+    "ui_builder_support": true,
+    "whitelisted_account_ids": [
+        "5bb4b90c395a02000ed0ec24"
+    ],
+    "min_zapp_sdk": "7.2.0.8",
+    "deprecated_since_zapp_sdk": "",
+    "unsupported_since_zapp_sdk": "",
+    "react_native": false,
+    "custom_configuration_fields": [
+        {
+            "key": "android_assets_bundle",
+            "type": "uploader",
+            "tooltip_text": "Add images to app as a zip file."
+        }
+    ]
+}
