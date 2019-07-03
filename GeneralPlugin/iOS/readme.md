@@ -2,13 +2,14 @@
 
 This project serves as a base example on implementing a general plugin for iOS - with focus on using URL schemes in order to launch activities.
 
-This example plugin implements the following 2 protocols that can be found in Zapp plugins repository:
+This example plugin implements the following 3 protocols that can be found in Zapp plugins repository:
 * `ZPGeneralPluginProtocol`
 * `ZPAdapterProtocol`
+* `ZPAppLoadingHookProtocol`
 
 Inheriting from the `ZPGeneralBaseProvider` simplifies the initialization process, handling of the configuration json dictionary handed over when initializing the plugin etc.
 
-In this example the only implemented call is `func handleUrlScheme(_ params: NSDictionary)` which is used to handle calls for the URL scheme.
+In this example the only implemented call is `func handleUrlScheme(_ params: NSDictionary)` which is used to handle calls for the URL scheme and `ZPAppLoadingHookProtocol` protocols to add an action in the application lifecycle.
 
 ## Project setup
 * Run `pod update` in the main library
