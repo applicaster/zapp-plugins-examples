@@ -1,6 +1,6 @@
 # General Plugin example - Android
 
-This project serves as a base example on implementing a general plugin for iOS - with focus on using URL schemes and application lifecycle in order to launch activities.
+This project serves as a base example on implementing a general plugin for Android - with focus on using URL schemes and application lifecycle in order to launch activities.
 
 This example plugin implements the following 3 protocols that can be found in Zapp plugins repository:
 * `GenericPluginI` - Implement this interface to get the plugin parameters after the initiation phase.
@@ -18,9 +18,9 @@ This example plugin implements the following 3 protocols that can be found in Za
         "plugin": {
             "api": {
                 "require_startup_execution": true,
-                "class_name": "com.funtoad.FuntoadAdapter"
+                "class_name": "com.example.exampleAdapter"
             },
-            "author_name": "developer eMail",
+            "author_name": "developer E-mail",
             "manifest_version": "0.1.0",
             "name": "name of your plugin",
             "description": "short plugin description",
