@@ -1,0 +1,86 @@
+apply plugin: 'com.android.library'
+
+repositories {
+    jcenter()
+    google()
+    mavenCentral()
+    maven {
+        url 'https://maven.google.com'
+    }
+    maven { url 'https://jitpack.io' }
+    maven {
+        credentials {
+            username System.getenv("MAVEN_USERNAME")
+            password System.getenv("MAVEN_PASSWORD")
+        }
+        url 'https://dl.bintray.com/applicaster-ltd/maven'
+    }
+    maven {
+        credentials {
+            username System.getenv("MAVEN_USERNAME")
+            password System.getenv("MAVEN_PASSWORD")
+        }
+        url 'https://dl.bintray.com/applicaster-ltd/maven_plugins'
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    }
+}
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        consumerProguardFiles 'proguard-rules.pro'
+
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    // Applicaster SDK
+    def applicasterSDKPath = 'com.applicaster:applicaster-android-sdk:2.32.21'
+
+    // Check if an open SDK is defined - if not use the closed one.
+    def devSDK = findProject(':applicaster-android-sdk')
+    if(devSDK != null){
+        implementation project(path: ':applicaster-android-sdk')
+    }
+    else{
+        implementation (applicasterSDKPath)
+    }
+
+}
+apply from: 'gradle/gradle-bintray-push.gradle'
