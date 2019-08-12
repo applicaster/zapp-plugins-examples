@@ -8,11 +8,11 @@ Pod::Spec.new do |s|
   s.author              = { 'liviur' => 'l.romasca@applicaster.com' }
   s.source              = { :git => 'https://github.com/applicaster/ZappGeneralPluginExample.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = "9.0"
-  s.platform            = :ios, '9.0'
+  s.ios.deployment_target = "10.0"
+  s.platform            = :ios, '10.0'
   s.requires_arc        = true
   s.static_framework    = true
-  s.swift_version       = '4.1'
+  s.swift_version       = '5.0'
 
   s.subspec 'SampleGeneralPlugin' do |c|
     c.frameworks = 'UIKit'
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
                   'OTHER_LDFLAGS' => '$(inherited)',
                   'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**',
                   'LIBRARY_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**',
-                  'SWIFT_VERSION' => '4.1'
+                  'SWIFT_VERSION' => '5.0'
                 }
 
   s.default_subspec = 'SampleGeneralPlugin'

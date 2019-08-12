@@ -28,9 +28,8 @@ class ViewController: UIViewController {
     @IBAction func handleURLSchemeClicked(_ sender: Any) {
         if let sampleGeneralPlugin = sampleGeneralPlugin {
             if let data = parametersTextField.text?.data(using: String.Encoding.utf8),
-                let params = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary,
-                let dictionaryParams = params {
-                sampleGeneralPlugin.handleUrlScheme(dictionaryParams)
+                let params = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
+                sampleGeneralPlugin.handleUrlScheme(params)
             } else {
                 let alert = UIAlertController(title: nil, message: "Please enter a valid json in the configuration field", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
