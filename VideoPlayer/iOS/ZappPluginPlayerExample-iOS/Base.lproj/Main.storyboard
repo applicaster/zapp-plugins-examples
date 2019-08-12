@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fur-3n-wys">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fur-3n-wys">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,7 +14,7 @@
             <objects>
                 <navigationController id="Fur-3n-wys" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aUc-Hb-iJA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -33,21 +34,25 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmG-DS-ygZ">
-                                <rect key="frame" x="16" y="86" width="252" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmG-DS-ygZ">
+                                <rect key="frame" x="105" y="110" width="204" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KXR-9Y-PGe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Play Full Screen"/>
                                 <connections>
                                     <action selector="buttonPlay_clicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="D3v-gY-JXH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdi-6G-3Ur">
-                                <rect key="frame" x="16" y="161" width="213" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdi-6G-3Ur">
+                                <rect key="frame" x="142" y="185" width="130" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MXX-QT-TVd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Play Inline"/>
                                 <connections>
@@ -56,6 +61,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZmG-DS-ygZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="61b-8W-dMx"/>
+                            <constraint firstItem="hdi-6G-3Ur" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K6D-uQ-RXF"/>
+                            <constraint firstItem="hdi-6G-3Ur" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RYW-d5-aAU"/>
+                            <constraint firstItem="hdi-6G-3Ur" firstAttribute="top" secondItem="ZmG-DS-ygZ" secondAttribute="bottom" constant="25" id="TRP-Gi-J4F"/>
+                            <constraint firstItem="ZmG-DS-ygZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="The-vD-knY"/>
+                            <constraint firstItem="ZmG-DS-ygZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="b9q-Nk-ZIi"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ZmG-DS-ygZ" secondAttribute="trailing" id="inX-Dg-63o"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="hdi-6G-3Ur" secondAttribute="trailing" id="vjA-uO-XeF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Zapp Plugin Player Example" id="Ue3-XW-3Sj"/>
                 </viewController>
@@ -72,19 +87,27 @@
                         <viewControllerLayoutGuide type="bottom" id="BwW-zp-cQC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3wg-vt-ox0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Yh-H3-jfl">
-                                <rect key="frame" x="48" y="100" width="278" height="167"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yh-H3-jfl">
+                                <rect key="frame" x="20" y="96.000000000000014" width="374" height="210.33333333333337"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7Yh-H3-jfl" secondAttribute="height" multiplier="16:9" id="3RB-ZN-4CS"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="BMs-oB-OME" kind="embed" id="ZWV-dk-sm2"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7Yh-H3-jfl" firstAttribute="top" secondItem="Mpw-8P-PG2" secondAttribute="bottom" constant="8" id="bao-hJ-NOo"/>
+                            <constraint firstItem="7Yh-H3-jfl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3wg-vt-ox0" secondAttribute="leadingMargin" id="pwZ-4D-UnG"/>
+                            <constraint firstItem="7Yh-H3-jfl" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3wg-vt-ox0" secondAttribute="trailingMargin" id="sB3-q4-Tvm"/>
+                            <constraint firstItem="7Yh-H3-jfl" firstAttribute="centerX" secondItem="3wg-vt-ox0" secondAttribute="centerX" id="zo6-Sz-cdU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Inline Player" id="LX5-IZ-BCL"/>
                     <connections>
@@ -93,21 +116,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3X-aP-gdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="98.50074962518741"/>
+            <point key="canvasLocation" x="1018.840579710145" y="98.4375"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ojX-kN-Bcx">
             <objects>
                 <viewController id="BMs-oB-OME" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X8M-7R-Iua"/>
+                        <viewControllerLayoutGuide type="bottom" id="dah-5H-clm"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="m9S-cm-NeH">
-                        <rect key="frame" x="0.0" y="0.0" width="278" height="167"/>
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="210.33333333333337"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pot-oE-vuc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="6"/>
+            <point key="canvasLocation" x="1829" y="334"/>
         </scene>
     </scenes>
 </document>
