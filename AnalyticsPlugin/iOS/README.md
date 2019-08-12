@@ -13,11 +13,11 @@ Clone this project `$ git clone https://github.com/applicaster/zapp-plugins-exam
 
 CD into `zapp-plugins-examples/Analytics/iOS`
 
-Make sure you are using Cocoapods 1.5.3 `$ pod --version`
+Make sure you are using Cocoapods 1.7.5 `$ pod --version`
 
 Run `$ pod update` in order to set the workspace.
 
-Open `ZappAnalyticsPluginExample-iOS.xcworkspace` with Xcode 10.1.
+Open `ZappAnalyticsPluginExample-iOS.xcworkspace` with Xcode 10.2.1.
 
 ## Zapp Analytics Provider API
 The Zapp analytics plugin API enables developers to integrate different analytic providers (i.e Google Analytics, Firebase, etc) to the the Zapp Platform.
