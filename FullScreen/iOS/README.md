@@ -7,8 +7,8 @@ For the full documentation, [Click Here](https://developer.applicaster.com/ui-bu
 ## Pre-requirements
 
 Please make sure you use:
-* Xcode 10.1
-* cocoapods 1.5.3
+* Xcode 10.2.1
+* cocoapods 1.7.5
 
 ## Setup and build project locally
 
