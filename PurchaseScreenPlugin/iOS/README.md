@@ -13,7 +13,7 @@ CD into `zapp-plugins-examples/PurchaseScreenPlugin/iOS/PurchaseScreenPlugin`
 
 Run `$ pod install` in order to set the workspace.
 
-Open `PurchaseScreenPlugin.xcworkspace` with Xcode 10.
+Open `PurchaseScreenPlugin.xcworkspace` with Xcode 10.2.1.
 
 ### ZPPluggableScreenProtocol
 
