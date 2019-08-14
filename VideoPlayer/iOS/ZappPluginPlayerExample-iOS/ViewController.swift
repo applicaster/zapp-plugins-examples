@@ -32,8 +32,8 @@ class ViewController: UIViewController {
     func presentPlayer() {
         let item:ZPPlayable = APURLPlayable(streamURL: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", name: "Test Video", description: "")
         let pluggablePlayer = ZPPlayerManager.sharedInstance.create(playableItem: item)
-        pluggablePlayer.presentPlayerFullScreen?(self, configuration: nil) {
-            pluggablePlayer.pluggablePlayerPlay(nil)
+        pluggablePlayer?.presentPlayerFullScreen?(self, configuration: nil) {
+            pluggablePlayer?.pluggablePlayerPlay(nil)
         }
     }
 }

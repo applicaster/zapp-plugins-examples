@@ -173,7 +173,7 @@ public class ZappPlayerAdapter: APPlugablePlayerBase {
         return ZappPlayerAdapter.pluggablePlayerType()
     }
     
-    open static func pluggablePlayerType() -> ZPPlayerType {
+    public static func pluggablePlayerType() -> ZPPlayerType {
         return .undefined
     }
     
