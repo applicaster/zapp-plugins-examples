@@ -2,13 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 27
-
-
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
-        minSdkVersion 17
-        targetSdkVersion 27
+        minSdkVersion 19
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
@@ -30,6 +29,7 @@ android {
         jcenter()
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
         maven { // Applicaster
             credentials{
                 username System.getenv("MAVEN_USERNAME")
@@ -43,7 +43,7 @@ android {
 
 dependencies {
     // Applicaster SDK
-    def applicasterSDKPath = 'com.applicaster:applicaster-android-sdk:2.33.20'
+    def applicasterSDKPath = 'com.applicaster:applicaster-android-sdk:4.0.+'
 
     // Check if an open SDK is defined - if not use the closed one.
     def devSDK = findProject(':applicaster-android-sdk')
@@ -56,10 +56,25 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    def supportLibVersion = '27.0.2'
+    def supportLibVersion = '28.0.0'
     implementation "com.android.support:appcompat-v7:${supportLibVersion}"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation "com.google.android.gms:play-services-ads:15.0.1"
+    implementation "com.google.android.gms:play-services-ads:16.0.0"
+}
+
+buildscript {
+    ext.kotlin_version = '1.2.0'
+
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.3'
+        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
 }
