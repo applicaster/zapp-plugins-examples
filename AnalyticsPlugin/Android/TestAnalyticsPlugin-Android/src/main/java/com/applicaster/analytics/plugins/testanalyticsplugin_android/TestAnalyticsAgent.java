@@ -453,11 +453,6 @@ public class TestAnalyticsAgent extends BaseAnalyticsAgent {
         super.resumeTracking(context);
     }
 
-    @Override
-    public void setScreenView(String screenView) {
-        super.setScreenView(screenView);
-    }
-
     /**
      * Using this function when it good time to sent the event in the buffer.
      */
