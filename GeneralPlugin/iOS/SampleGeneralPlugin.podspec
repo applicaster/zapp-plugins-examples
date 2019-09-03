@@ -8,33 +8,25 @@ Pod::Spec.new do |s|
   s.author              = { 'liviur' => 'l.romasca@applicaster.com' }
   s.source              = { :git => 'https://github.com/applicaster/ZappGeneralPluginExample.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = "10.0"
   s.platform            = :ios, '10.0'
   s.requires_arc        = true
-  s.static_framework    = true
-  s.swift_version       = '5.0'
 
-  s.subspec 'SampleGeneralPlugin' do |c|
-    c.frameworks = 'UIKit'
-    c.source_files = 'SampleGeneralPlugin/**/*.{swift}'
-    c.resources = [
-      "SampleGeneralPluginResources/**/*.xcassets",
-      "SampleGeneralPluginResources/**/*.storyboard",
-      "SampleGeneralPluginResources/**/*.xib",
-      "SampleGeneralPluginResources/**/*.png"
-    ]
-    c.dependency 'ZappGeneralPluginsSDK'
-    c.dependency 'ZappPlugins'
-  end
+  s.frameworks = 'UIKit'
+  s.source_files = 'SampleGeneralPlugin/**/*.{swift}'
+  s.resources = [
+    "SampleGeneralPluginResources/**/*.xcassets",
+    "SampleGeneralPluginResources/**/*.storyboard",
+    "SampleGeneralPluginResources/**/*.xib",
+    "SampleGeneralPluginResources/**/*.png"
+  ]
 
   s.xcconfig =  { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',
                   'ENABLE_BITCODE' => 'YES',
                   'OTHER_LDFLAGS' => '$(inherited)',
                   'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**',
                   'LIBRARY_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**',
-                  'SWIFT_VERSION' => '5.0'
+                  'SWIFT_VERSION' => '5.1'
                 }
 
-  s.default_subspec = 'SampleGeneralPlugin'
-
+  s.dependency 'ZappPlugins'
 end

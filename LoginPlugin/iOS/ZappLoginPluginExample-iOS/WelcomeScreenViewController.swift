@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ZappLoginPluginsSDK
+import ZappPlugins
 
 /*
  This VC represent the last phase after we logged in or if we are already logged,

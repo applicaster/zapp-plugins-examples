@@ -8,9 +8,42 @@
 
 import Foundation
 import ZappPlugins
-import ZappGeneralPluginsSDK
 
-@objc public class SampleGeneralPlugin: ZPGeneralBaseProvider, ZPAppLoadingHookProtocol {
+@objc public class SampleGeneralPlugin: NSObject, ZPGeneralPluginProtocol, ZPAppLoadingHookProtocol {
+    public required override init() {
+        
+    }
+    
+    public func activate(options: [AnyHashable : Any]?) {
+        
+    }
+    
+    public func activate(object: NSObject?) {
+        
+    }
+    
+    public func activate(object: NSObject?, completion: ((NSObject?) -> Void)?) {
+        completion?(nil)
+    }
+    
+    public func activate() {
+        
+    }
+    
+    public func deactivate(completion: ((Bool) -> Void)?) {
+        completion?(true)
+    }
+    
+    public func deactivateAll(completion: ((Bool) -> Void)?) {
+        completion?(true)
+    }
+    
+    public var configurationJSON: NSDictionary?
+    
+    public required init(configurationJSON: NSDictionary?) {
+        self.configurationJSON = configurationJSON
+    }
+    
     
     // MARK: - ZPAdapterProtocol implementation
     /**

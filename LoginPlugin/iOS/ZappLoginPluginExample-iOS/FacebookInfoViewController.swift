@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ZappLoginPluginsSDK
+import ZappPlugins
 
 /*
  This VC manages the login process and coresponds with the login plugin,

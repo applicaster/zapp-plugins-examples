@@ -7,23 +7,31 @@
 //
 
 import Foundation
-import ZappAnalyticsPluginsSDK
+import ZappPlugins
 
-open class TestAnalyticsProvider: ZPAnalyticsProvider {
-    
+open class TestAnalyticsProvider: NSObject, ZPAnalyticsProviderProtocol {
     let ACCOUNT_ID = "mobile_app_account_id"
     
     var accountId: String = ""
     var tracker : GAITracker?
     
     //MARK: Configuration
+    public var configurationJSON: NSDictionary?
+    
+    public required override init() {
+        
+    }
+    
+    public required init(configurationJSON: NSDictionary?) {
+        self.configurationJSON = configurationJSON
+    }
     
     /**
      Configures the provider, here is where the analytics provider should be configured.
      The custom configs from the manifest are extracted and available in `self.providedProperties` variable.
      If the configuration of the provider is successful return true otherwise retrun false
     */
-    open override func configureProvider() -> Bool {
+    open func configureProvider() -> Bool {
         
         /**
         You can access the custom config passed in the plugin_manifest by accessing self.providedProperties:
@@ -50,66 +58,66 @@ open class TestAnalyticsProvider: ZPAnalyticsProvider {
     }
     
     // Returns the provider key (a unique identifier for your provider)
-    open override func getKey() -> String {
+    open func getKey() -> String {
         return "TestAnalyticsProvider"
     }
     
     // Tracking url params if implemented on one of the plugins
-    open override func trackCampaignParamsFromUrl(_ url: NSURL) {
-        super.trackCampaignParamsFromUrl(url)
+    open func trackCampaignParamsFromUrl(_ url: NSURL) {
+        //super.trackCampaignParamsFromUrl(url)
     }
     
     
     //MARK: Track event Functions
-    open override func trackEvent(_ eventName: String) {
+    open func trackEvent(_ eventName: String) {
         trackEvent(eventName, parameters: [:])
     }
     
-    open override func trackEvent(_ eventName: String, parameters: [String : NSObject]) {
+    open func trackEvent(_ eventName: String, parameters: [String : NSObject]) {
         if let tracker = tracker {
             tracker.send(parameters)
         }
     }
     
-    open override func trackEvent(_ eventName: String, message: String, error: NSError) {
-        super.trackEvent(eventName, message: message, error: error)
+    open func trackEvent(_ eventName: String, message: String, error: NSError) {
+        //super.trackEvent(eventName, message: message, error: error)
     }
     
-    open override func trackEvent(_ eventName: String, message: String, exception: NSException) {
-        super.trackEvent(eventName, message: message, exception: exception)
+    open func trackEvent(_ eventName: String, message: String, exception: NSException) {
+        //super.trackEvent(eventName, message: message, exception: exception)
     }
     
-    open override func trackEvent(_ eventName: String, action: String, label: String, value: Int) {
-        super.trackEvent(eventName, action: action, label: label, value: value)
+    open func trackEvent(_ eventName: String, action: String, label: String, value: Int) {
+        //super.trackEvent(eventName, action: action, label: label, value: value)
     }
     
-    open override func trackEvent(_ eventName: String, parameters: [String : NSObject], completion: ((Bool, String?) -> Void)?) {
-        super.trackEvent(eventName, parameters: parameters, completion: completion)
+    open func trackEvent(_ eventName: String, parameters: [String : NSObject], completion: ((Bool, String?) -> Void)?) {
+        //super.trackEvent(eventName, parameters: parameters, completion: completion)
     }
     
-    open override func trackEvent(_ eventName: String, timed: Bool) {
-        super.trackEvent(eventName, timed: timed)
+    open func trackEvent(_ eventName: String, timed: Bool) {
+        //super.trackEvent(eventName, timed: timed)
     }
     
-    open override func trackEvent(_ eventName: String, parameters: [String : NSObject], timed: Bool) {
-        super.trackEvent(eventName, parameters: parameters, timed: timed)
+    open func trackEvent(_ eventName: String, parameters: [String : NSObject], timed: Bool) {
+        //super.trackEvent(eventName, parameters: parameters, timed: timed)
     }
     
-    open override func endTimedEvent(_ eventName: String, parameters: [String : NSObject]) {
-        super.endTimedEvent(eventName, parameters: parameters)
+    open func endTimedEvent(_ eventName: String, parameters: [String : NSObject]) {
+        //super.endTimedEvent(eventName, parameters: parameters)
     }
     
-    open override func trackError(_ errorID: String, message: String, error: NSError) {
+    open func trackError(_ errorID: String, message: String, error: NSError) {
         if let tracker = tracker {
             tracker.send([errorID : message])
         }
     }
     
-    open override func trackError(_ errorID: String, message: String, exception: NSException) {
-        super.trackError(errorID, message: message, exception: exception)
+    open func trackError(_ errorID: String, message: String, exception: NSException) {
+        //super.trackError(errorID, message: message, exception: exception)
     }
     
-    open override func trackScreenView(_ screenName: String, parameters: [String : NSObject]) {
+    open func trackScreenView(_ screenName: String, parameters: [String : NSObject]) {
         if let tracker = tracker {
             tracker.set(kGAIScreenName, value: screenName)
             tracker.send(GAIDictionaryBuilder.createScreenView().build() as! [AnyHashable : Any]?)
@@ -121,7 +129,49 @@ open class TestAnalyticsProvider: ZPAnalyticsProvider {
     /**
      sets the Push Notification deviceToken
      */
-    open override func setPushNotificationDeviceToken(_ deviceToken: Data) {
-        super.setPushNotificationDeviceToken(deviceToken)
+    open func setPushNotificationDeviceToken(_ deviceToken: Data) {
+        //super.setPushNotificationDeviceToken(deviceToken)
+    }
+    
+    // MARK: Extra Analytics methods
+
+    public func analyticsMaxParametersAllowed() -> Int {
+        return 1
+    }
+    
+    public func setBaseParameter(_ value: NSObject?, forKey key: String) {
+        
+    }
+    
+    public func sortPropertiesAlphabeticallyAndCutThemByLimitation(_ properties: [String : NSObject]) -> [String : NSObject] {
+        return properties
+    }
+    
+    public func createAnalyticsProvider(_ allProvidersSetting: [String : NSObject]) -> Bool {
+        return true
+    }
+    
+    public func updateGenericUserProperties(_ genericUserProfile: [String : NSObject]) {
+        
+    }
+    
+    public func updateDefaultEventProperties(_ eventProperties: [String : NSObject]) {
+        
+    }
+    
+    public func trackScreenView(_ screenName: String, parameters: [String : NSObject], completion: ((Bool, String?) -> Void)?) {
+        
+    }
+    
+    public func presentToastForLoggedEvent(_ eventDescription: String?) {
+        
+    }
+    
+    public func canPresentToastForLoggedEvents() -> Bool {
+        return false
+    }
+    
+    public func shouldTrackEvent(_ eventName: String) -> Bool {
+        return true
     }
 }

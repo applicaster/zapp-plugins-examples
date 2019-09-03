@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ZappLoginPluginsSDK
+import ZappPlugins
 import FacebookCore
 import FacebookLogin
 
@@ -21,7 +21,7 @@ import FacebookLogin
 @objc class FacebookLoginPlugin: NSObject, ZPLoginProviderProtocol, ZPLoginProviderUserDataProtocol {
     
     public var configurationJSON: NSDictionary?
-    var loginCompletion: ((ZappLoginPluginsSDK.ZPLoginOperationStatus) -> Swift.Void)?
+    var loginCompletion: ((ZPLoginOperationStatus) -> Void)?
     var fbToken: AccessToken?
     var loginManager:LoginManager?
     
@@ -137,7 +137,7 @@ import FacebookLogin
      This methood is called in order to verify if authorization flow is in process
     */
     public func isPerformingAuthorizationFlow() -> Bool {
-        return self.isPerformingAuthorizationFlow()
+        return true
     }
 
 //MARK: Public

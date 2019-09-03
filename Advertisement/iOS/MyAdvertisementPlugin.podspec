@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                   'OTHER_LDFLAGS' => '$(inherited)',
                   'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**',
                   'LIBRARY_SEARCH_PATHS' => '$(inherited) "${PODS_ROOT}"/**',
-                  'SWIFT_VERSION' => '5.0'
+                  'SWIFT_VERSION' => '5.1'
                   }
 
   s.dependency 'ZappPlugins'

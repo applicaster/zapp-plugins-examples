@@ -23,9 +23,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Ignore this portion of the flow, this will happen automatically in the Applicaster App initilization flow
-        let provider = TestAnalyticsProvider.init()
+        let provider = TestAnalyticsProvider()
         if provider.configureProvider() {
-            APAnalyticsManager.start(withSampleProvider: provider)
+            ZAAppConnector.sharedInstance().analyticsDelegate.startManager(withAccountId: nil)
         }
     }
 
@@ -41,17 +41,17 @@ class ViewController: UIViewController {
         */
         switch sender.tag {
         case 1:
-            APAnalyticsManager.trackEvent(CLICKING_BUTTON_1)
+            ZAAppConnector.sharedInstance().analyticsDelegate.trackEvent(name: CLICKING_BUTTON_1, parameters: nil, timed: false)
         case 2:
-            APAnalyticsManager.trackEvent(CLICKING_BUTTON_2)
+            ZAAppConnector.sharedInstance().analyticsDelegate.trackEvent(name: CLICKING_BUTTON_2, parameters: nil, timed: false)
         case 3:
-            APAnalyticsManager.trackEvent(EVENT_WITH_PARAMS, withParameters: ["categoryTapped":"Movies"])
+            ZAAppConnector.sharedInstance().analyticsDelegate.trackEvent(name: EVENT_WITH_PARAMS, parameters: ["categoryTapped":"Movies"], timed: false)
         case 4:
-            APAnalyticsManager.trackError(ERROR_EVENT, message: "Error occurred", error: nil)
+            ZAAppConnector.sharedInstance().analyticsDelegate.trackEvent(name: ERROR_EVENT, parameters: ["message": "Error occurred"], timed: false)
         case 5:
-            APAnalyticsManager.trackScreenView(SCREEN_NAME)
+            ZAAppConnector.sharedInstance().analyticsDelegate.trackScreenView(withModelTitle: SCREEN_NAME)
         default:
-            APAnalyticsManager.trackEvent(CLICKING_BUTTON_1)
+            ZAAppConnector.sharedInstance().analyticsDelegate.trackEvent(name: CLICKING_BUTTON_1, parameters: nil, timed: false)
         }
     }
     

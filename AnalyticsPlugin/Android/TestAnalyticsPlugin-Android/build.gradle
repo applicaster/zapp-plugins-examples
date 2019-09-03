@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
 
 
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 27
+        minSdkVersion 19
+        targetSdkVersion 28
 
         consumerProguardFiles 'proguard-rules.pro'
         multiDexEnabled true
@@ -39,8 +39,18 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // Applicaster SDK
-    implementation 'com.applicaster:applicaster-android-sdk:2.33.20'
+    // Applicaster SDK
+    def applicasterSDKPath = 'com.applicaster:applicaster-android-sdk:4.0.+'
 
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.google.android.gms:play-services-analytics:11.0.4'
+    // Check if an open SDK is defined - if not use the closed one.
+    def devSDK = findProject(':applicaster-android-sdk')
+    if(devSDK != null){
+        implementation project(':applicaster-android-sdk')
+    }
+    else{
+        implementation (applicasterSDKPath)
+    }
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.google.android.gms:play-services-analytics:16.0.0'
 }
