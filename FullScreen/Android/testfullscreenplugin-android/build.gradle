@@ -41,10 +41,13 @@ dependencies {
         implementation (applicasterSDKPath)
     }
 
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     //Dagger
     annotationProcessor 'com.google.dagger:dagger-compiler:2.12'
     api 'com.google.dagger:dagger:2.12'
 
+    //Support
     def supportLibVersion = '28.0.0'
     implementation 'com.android.support:appcompat-v7:${supportLibVersion}'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'

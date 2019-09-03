@@ -59,7 +59,7 @@ dependencies {
         implementation (applicasterSDKPath)
     }
 
-    implementation 'com.applicaster:applicaster-iap-framework:0.0.1'
+    implementation 'com.applicaster:applicaster-iap-framework:0.0.+'
 
     def supportLibVersion = '28.0.0'
     implementation 'com.android.support:appcompat-v7:${supportLibVersion}'
