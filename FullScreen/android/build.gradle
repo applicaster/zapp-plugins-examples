@@ -1,14 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
+
     repositories {
         google()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
-        
+
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,8 +24,11 @@ allprojects {
         mavenCentral()
         maven { // Applicaster
             credentials {
-                username System.getenv("MAVEN_USERNAME")
-                password System.getenv("MAVEN_PASSWORD")
+//                username System.getenv("MAVEN_USERNAME")
+//                password System.getenv("MAVEN_PASSWORD")
+                username "snooky23@applicaster-ltd"
+                password "272e54ff185fca1e16b0201db14a9e35e10da2e3"
+
             }
             url 'https://dl.bintray.com/applicaster-ltd/maven'
         }

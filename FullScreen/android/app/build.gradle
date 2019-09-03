@@ -1,17 +1,27 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.applicaster.plugin.example.fullscreen"
-        minSdkVersion 17
-        targetSdkVersion 27
+        minSdkVersion 19
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -22,7 +32,27 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.applicaster:applicaster-android-sdk:2.33.20'
-    implementation 'com.google.dagger:dagger:2.8'
+    // Applicaster SDK
+    def applicasterSDKPath = 'com.applicaster:applicaster-android-sdk:4.0.+'
+
+    // Check if an open SDK is defined - if not use the closed one.
+    def devSDK = findProject(':applicaster-android-sdk')
+    if(devSDK != null){
+        implementation project(':applicaster-android-sdk')
+    }
+    else{
+        implementation (applicasterSDKPath)
+    }
+
+    //Dagger
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.12'
+    api 'com.google.dagger:dagger:2.12'
+
+    //Support
+    def supportLibVersion = '28.0.0'
+    implementation 'com.android.support:appcompat-v7:${supportLibVersion}'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+
+    //Unit-Test
     implementation project(':testfullscreenplugin-android')
 }
