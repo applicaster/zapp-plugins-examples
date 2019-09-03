@@ -24,11 +24,8 @@ allprojects {
         mavenCentral()
         maven { // Applicaster
             credentials {
-//                username System.getenv("MAVEN_USERNAME")
-//                password System.getenv("MAVEN_PASSWORD")
-                username "snooky23@applicaster-ltd"
-                password "272e54ff185fca1e16b0201db14a9e35e10da2e3"
-
+                username System.getenv("MAVEN_USERNAME")
+                password System.getenv("MAVEN_PASSWORD")
             }
             url 'https://dl.bintray.com/applicaster-ltd/maven'
         }
