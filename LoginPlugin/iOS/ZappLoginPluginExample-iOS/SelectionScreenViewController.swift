@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import ZappLoginPluginsSDK
+import ZappPlugins
 
 /*
  This Vc constist from a list of login plugins ,it starts the app flow form fist phase of selecting and initializing the selected,
@@ -19,7 +19,7 @@ import ZappLoginPluginsSDK
     @IBOutlet weak var facebookLogin: UIButton!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let loginPlugin = ZPLoginManager.sharedInstance.createWithUserData() as ZPLoginProviderUserDataProtocol?,
+        if let loginPlugin = ZAAppConnector.sharedInstance().pluginsDelegate?.loginPluginsManager?.createWithUserData(),
             let extensions = [:] as? [String : NSObject] {
             if let isUserComply = loginPlugin.isUserComply?(policies: extensions),
                 isUserComply == true {

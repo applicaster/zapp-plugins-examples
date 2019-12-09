@@ -23,7 +23,7 @@
   "whitelisted_account_ids": [
 
   ],
-  "min_zapp_sdk": "6.0.1",
+  "min_zapp_sdk": "13.0.0-Dev",
   "react_native": false,
   "custom_configuration_fields": [
     {
